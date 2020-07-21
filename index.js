@@ -5,8 +5,8 @@ const DabiClient = new DabiImages.Client();
 const prefix = 't/';
 const fetch = require('node-fetch');
 const randomPuppy = require('random-puppy');
+var subreddit = "hentai";
 
-var subreddit = 'r/hentai'
 
 client.on("message", (message) => {
   // Exit and stop if it's not there
