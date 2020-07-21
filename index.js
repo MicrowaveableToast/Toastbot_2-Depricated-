@@ -28,7 +28,13 @@ client.on("message", (message) => {
     })
 
 }  
-  
+    if (message.content.startsWith(prefix + "Hentai")) {
+    randomPuppy(hentai)
+    .then(url => {
+        message.channel.send(url);
+    })
+
+}  
   
 });
 
