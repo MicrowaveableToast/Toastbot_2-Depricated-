@@ -6,7 +6,7 @@ const prefix = 't/';
 const fetch = require('node-fetch');
 const randomPuppy = require('random-puppy');
 
-
+var subreddit = 'r/hentai'
 
 client.on("message", (message) => {
   // Exit and stop if it's not there
@@ -29,7 +29,7 @@ client.on("message", (message) => {
 
 }  
     if (message.content.startsWith(prefix + "Hentai")) {
-    randomPuppy('hentai')
+    randomPuppy(subreddit)
     .then(url => {
         message.channel.send(url);
     })
