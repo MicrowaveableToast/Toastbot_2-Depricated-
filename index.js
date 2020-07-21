@@ -3,7 +3,10 @@ const client = new Discord.Client();
 const DabiImages = require("dabi-images");
 const DabiClient = new DabiImages.Client();
 const prefix = 't/';
-var url 
+const fetch = require('node-fetch');
+const randomPuppy = require('random-puppy');
+
+
 
 client.on("message", (message) => {
   // Exit and stop if it's not there
@@ -16,18 +19,14 @@ client.on("message", (message) => {
     message.channel.send("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Toast-2.jpg/1024px-Toast-2.jpg");
   }
    if (message.content.startsWith(prefix + "toastbot")) {
-    message.channel.send("toastbot version 1.0.9");
+    message.channel.send("toastbot version 1.1.0");
    }
-   
-if (message.content.startsWith(prefix + "hentaiass")) {
-    DabiClient.nsfw.hentai.ass().then(json => {
-	message.channel.send(Json);
+   if (message.content.startsWith(prefix + "puppy")) {
+    randomPuppy()
+    .then(url => {
+        message.channel.send(url);
+    })
 
-   
-  
-  
-  
-}); 
 }  
   
   
