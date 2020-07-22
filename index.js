@@ -22,53 +22,13 @@ client.on("message", (message) => {
     message.channel.send("toastbot version 1.1.0");
    }
    if (message.content.startsWith(prefix + "puppy")) {
-    randomPuppy()
+   randomPuppy('shittyrainbow6')
     .then(url => {
         message.channel.send(url);
     })
 
-}  
-    if (message.content.startsWith(prefix + "Hentai")) {
-    randomPuppy(subreddit)
-    .then(url => {
-        message.channel.send(url);
-    })
-	  module.exports.run = async (bot, message, args) => {
-
-    let reddit = [
-        "meme",
-        "animemes",
-        "MemesOfAnime",
-        "animememes",
-        "AnimeFunny",
-        "dankmemes",
-        "dankmeme",
-        "wholesomememes",
-        "MemeEconomy",
-        "techsupportanimals",
-        "meirl",
-        "me_irl",
-        "2meirl4meirl",
-        "AdviceAnimals"
-    ]
-
-    let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
-
-    message.channel.startTyping();
-
-    randomPuppy(subreddit).then(async url => {
-            await message.channel.send({
-                files: [{
-                    attachment: url,
-                    name: 'meme.png'
-                }]
-            }).then(() => message.channel.stopTyping());
-    }).catch(err => console.error(err));
-
-};
-}  
+}
   
-});
 
 
 
