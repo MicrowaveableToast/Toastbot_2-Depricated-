@@ -4,6 +4,7 @@
   "description": "It's the files of toast bot an open source disscord bot which does nothing yet but I will implement features later",
   "main": "index.js",
   "dependencies": {
+    "@ipmanlk/reddit-simple": "^2.2.1",
     "akaneko": "^3.0.2",
     "cheerio": "^1.0.0-rc.3",
     "dabi-images": "^2.7.5",
@@ -16,6 +17,8 @@
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.4",
     "random-puppy": "^1.1.0",
+    "random-reddit": "^1.1.0",
+    "reddit-wrapper-v2": "^1.1.6",
     "request": "^2.88.2"
   },
   "devDependencies": {},
