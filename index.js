@@ -21,11 +21,16 @@ client.on("message", (message) => {
    
    if (message.content.startsWith(prefix + "Game")) {
     message.channel.send("Pick a number (PN)  , and thats what I've decided program");
-	if (message.content.startsWith(PN); {		
+   if (message.content.startsWith(PN) ); {
 		var Number = Math.floor(Math.random() * 100) + 1;
 		message.channel.send( Number );
 	}
    }
+   
+   
+   
+   
+   
    
     });
 
@@ -35,9 +40,6 @@ client.on("message", (message) => {
 
 
   client.login('NzMwNTY1MDYzODExMDA2NTI2.XxTsLw.Pig3Xj3l12Tgjil-rN968_PHfHg');
-
-
-
 
 
 
