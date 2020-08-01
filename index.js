@@ -19,6 +19,20 @@ client.on("message", (message) => {
     message.channel.send("toastbot version 1.1.0");
    }
    
+   if (message.content.startsWith(prefix + "Game")) {
+    message.channel.send("Which one. Tick Tac Toe (TTT) , and thats what I've decided program");
+	if (message.content.startsWith("TTT")) {
+		message.channel.send(
+		   "| | | |" +
+		   "| | | |" +
+		   "| | | |" );
+			
+		
+	
+	
+
+	}
+   }
 
     });
 
