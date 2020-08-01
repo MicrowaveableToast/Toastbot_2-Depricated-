@@ -16,25 +16,22 @@ client.on("message", (message) => {
     message.channel.send("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Toast-2.jpg/1024px-Toast-2.jpg");
   }
    if (message.content.startsWith(prefix + "toastbot")) {
-    message.channel.send("toastbot version 1.1.0");
+    
    }
    
    if (message.content.startsWith(prefix + "Game")) {
-    message.channel.send("Which one. Tick Tac Toe (TTT) , and thats what I've decided program");
-	if (message.content.startsWith("TTT")) {
-		message.channel.send(
-		   "| | | |" +
-		   "| | | |" +
-		   "| | | |" );
-			
-		
-	
-	
-
+    message.channel.send("Pick a number (PN)  , and thats what I've decided program");
+	if (message.content.startsWith(PN); {		
+		var Number = Math.floor(Math.random() * 100) + 1;
+		message.channel.send( Number );
 	}
    }
-
+   
     });
+
+
+
+
 
 
   client.login('NzMwNTY1MDYzODExMDA2NTI2.XxTsLw.Pig3Xj3l12Tgjil-rN968_PHfHg');
