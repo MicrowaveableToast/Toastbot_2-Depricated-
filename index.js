@@ -7,7 +7,7 @@ const prefix = 't/';
 
 client.on("message", (message) => {
   // Exit and stop if it's not there
-  if (!message.content.startsWith(prefix)) return;
+  if (message.content.startsWith(prefix)) return;
  
   if (message.content.startsWith(prefix + "ping")) {
     message.channel.send("yes master toast");
@@ -19,7 +19,7 @@ client.on("message", (message) => {
     
    }
    
-   if (message.content.startsWith(prefix + "Game")) {
+   if (message.content.startsWith(prefix + "game")) {
     message.channel.send("Pick a number (PN)  , and thats what I've decided program");
    if (message.content.startsWith(PN) ); {
 		var Number = Math.floor(Math.random() * 100) + 1;
