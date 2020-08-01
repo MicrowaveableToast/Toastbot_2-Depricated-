@@ -19,13 +19,7 @@ client.on("message", (message) => {
     
    }
    
-   if (message.content.startsWith(prefix + "game")) {
-    message.channel.send("Pick a number (PN)  , and thats what I've decided program");
-   if (message.content.startsWith(PN) ); {
-		var Number = Math.floor(Math.random() * 100) + 1;
-		message.channel.send( Number );
-	}
-   }
+
    
    
    
