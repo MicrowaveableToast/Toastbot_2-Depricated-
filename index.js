@@ -10,10 +10,10 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === Tag+'ping') {
-    msg.reply('Pong!')
+     msg.reply('Pong!')
   }
-  if (msg.content === Tag+'MakeMaddoxAdmin') {
-    msg.send('Pong!')
+  if (msg.content === Tag+'Avatar') {
+    message.reply(message.author.displayAvatarURL());
   }
 });
 
