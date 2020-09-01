@@ -10,7 +10,7 @@ const prefix = 't/';
 });
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
+     if (msg.content === 'ping') {
     msg.reply('Pong!');
   }
 
@@ -19,7 +19,7 @@ client.on('message', msg => {
 
 
 
-  client.login('NzMwNTY1MDYzODExMDA2NTI2.XxTsLw.Pig3Xj3l12Tgjil-rN968_PHfHg');
+ 
 
 
 
