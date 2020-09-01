@@ -10,7 +10,10 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === Tag+'ping') {
-    msg.reply('Pong!');
+    msg.reply('Pong!')
+  if (message.content.startsWith(Tag + "toastpic")) {
+    message.channel.send("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Toast-2.jpg/1024px-Toast-2.jpg"); 
+  
   }
 });
 
