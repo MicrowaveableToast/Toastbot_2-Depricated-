@@ -15,11 +15,6 @@ client.on("message", (message) => {
   if (message.content.startsWith(prefix + "toastpic")) {
     message.channel.send("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Toast-2.jpg/1024px-Toast-2.jpg");
   }
-   if (message.content.startsWith(prefix + "toastbot")) {
-    
-   }
-   
-
    
    
    
