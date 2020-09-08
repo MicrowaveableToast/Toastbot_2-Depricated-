@@ -1,39 +1,23 @@
-  
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = 't/';
+const Tag = 't/'
 
 
 
-client.on("message", (message) => {
-  // Exit and stop if it's not there
-  if (message.content.startsWith(prefix)) return;
- 
-  if (message.content.startsWith(prefix + "ping")) {
-    message.channel.send("yes master toast");
-  } 
-  if (message.content.startsWith(prefix + "toastpic")) {
-    message.channel.send("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Toast-2.jpg/1024px-Toast-2.jpg");
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', msg => {
+  if (msg.content === Tag+'ping') {
+     msg.reply('Pong!')
   }
-   if (message.content.startsWith(prefix + "toastbot")) {
-    
-   }
-   
+  if (msg.content === 'water') {
+    msg.reply('LTTSTORE.COM')
+  }
+  if (msg.content === Tag+ 'avatar') {
+    msg.reply(msg.author.displayAvatarURL());
+  }
+});
 
-   
-   
-   
-   
-   
-   
-    });
-
-
-
-
-
-
-  client.login('NzMwNTY1MDYzODExMDA2NTI2.XxTsLw.Pig3Xj3l12Tgjil-rN968_PHfHg');
-
-
-
+client.login('NzMwNTY1MDYzODExMDA2NTI2.XwZVvA.fkAxqRMQSCSWE4dO7Seoa7lAQQ0');
