@@ -22,8 +22,8 @@ client.on('message', msg => {
  
   }
   if (msg.content === 'gg') {
-    if (message.member.voice.channel) {
-		const connection = await message.member.voice.channel.join();
+    if (msg.member.voice.channel) {
+		const connection = await msg.member.voice.channel.join();
 	}
   }
 });
