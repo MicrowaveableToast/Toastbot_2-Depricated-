@@ -12,7 +12,7 @@ client.on('message', msg => {
   if (msg.content === Tag+'ping') {
      msg.reply('Pong!')
   }
-  if (msg.content === Tag+ 'water') {
+  if (msg.content === 'water') {
     msg.reply('LTTSTORE.COM')
   }
   if (msg.content === Tag+ 'avatar') {
