@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const Tag = 't/'
-
+const ytdl = require('ytdl-core');
 
 
 client.on('ready', () => {
@@ -9,6 +9,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+  if (msg.author.bot) return;
   if (msg.content === Tag+'ping') {
      msg.reply('Pong!')
   }
@@ -17,6 +18,13 @@ client.on('message', msg => {
   }
   if (msg.content === Tag+ 'avatar') {
     msg.reply(msg.author.displayAvatarURL());
+    
+ 
+  }
+  if (msg.content === 'gg') {
+    if (message.member.voice.channel) {
+		const connection = await message.member.voice.channel.join();
+	}
   }
 });
 
