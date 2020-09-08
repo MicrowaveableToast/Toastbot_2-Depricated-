@@ -13,7 +13,10 @@ client.on('message', msg => {
      msg.reply('Pong!')
   }
   if (msg.content === Tag+ 'water') {
-    message.reply('LTTSTORE.COM')
+    msg.reply('LTTSTORE.COM')
+  }
+  if (msg.content === Tag+ 'avatar') {
+    msg.reply(msg.author.displayAvatarURL());
   }
 });
 
