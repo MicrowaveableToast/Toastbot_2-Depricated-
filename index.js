@@ -12,8 +12,8 @@ client.on('message', msg => {
   if (msg.content === Tag+'ping') {
      msg.reply('Pong!')
   }
-  if (msg.content === Tag+'Avatar') {
-    message.reply(message.author.displayAvatarURL());
+  if (msg.content === Tag+ 'water') {
+    message.reply('LTTSTORE.COM')
   }
 });
 
