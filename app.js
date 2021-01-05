@@ -22,36 +22,11 @@ client.on('message', async message => {
     var command = message.content.toLowerCase().slice(settings.prefix.length).split(" ")[0];
     if (message.author.bot) return;
 
-
-    if (command == 'test') {
-        
-      let numb = Math.floor(Math.random() * 2) + 1
-        if (numb == 1) {
-            message.channel.send('poo poo')
-        }
-        if (numb == 2) {
-            message.channel.send('pee pee')
-
-
-
-        }
-         
-
-       
-
-
-        
-
-
-    }
-
-
-
     if (command == 'neko') {
         let res = HMfull.HMtai.sfw.neko()
         message.channel.send(res.url);
 
-    }    
+    }
     if (command == 'computerwallpaper') {
         let res = HMfull.HMtai.sfw.wallpaper();
         message.channel.send(res.url);
@@ -60,7 +35,7 @@ client.on('message', async message => {
         let res = HMfull.HMtai.sfw.mobileWallpaper();
         message.channel.send(res.url);
     }
-   
+
     if (command == 'ass') {
         if (message.channel.nsfw) {
             embed.setImage(hmtai.nsfw.ass());
@@ -229,99 +204,88 @@ client.on('message', async message => {
             embed.setImage(hmtai.nsfw.zettaiRyouiki());
             return message.channel.send(embed);
         }
-    
-     }
+
+    }
     if (command == 'nsfwmobilewallpaper') {
         if (message.channel.nsfw) {
             embed.setImage(hmtai.nsfw.nsfwMobileWallpaper());
             return message.channel.send(embed);
         }
-    
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
     }
+    if (command == 'kuni') {
+        if (message.channel.nsfw) {
+            embed.setImage(HMfull.Nekos.nsfw.kuni());
+            return message.channel.send(embed);
+        }
+
+    }
+    if (command == 'boobs') {
+        if (message.channel.nsfw) {
+            embed.setImage(HMfull.Nekos.nsfw.boobs());
+            return message.channel.send(embed);
+        }
+
+    }
+    if (command == 'anal') {
+        if (message.channel.nsfw) {
+            embed.setImage(HMfull.Nekos.nsfw.anal());
+            return message.channel.send(embed);
+        }
+
+    }
+    if (command == 'trap') {
+        if (message.channel.nsfw) {
+            embed.setImage(HMfull.Nekos.nsfw.trap());
+            return message.channel.send(embed);
+        }
+
+    }
+    if (command == 'tits') {
+        if (message.channel.nsfw) {
+            embed.setImage(HMfull.Nekos.nsfw.tits());
+            return message.channel.send(embed);
+        }
+
+    }
+    if (command == 'lewdneko') {
+        if (message.channel.nsfw) {
+            embed.setImage(HMfull.Nekos.nsfw.lewdneko());
+            return message.channel.send(embed);
+        }
+
+    }
+    if (command == 'keta') {
+        if (message.channel.nsfw) {
+            embed.setImage(HMfull.Nekos.nsfw.keta());
+            return message.channel.send(embed);
+        }
+
+    }
+    if (command == 'nsfwavatar') {
+        if (message.channel.nsfw) {
+            embed.setImage(HMfull.Nekos.nsfw.avatar());
+            return message.channel.send(embed);
+        }
+
+    }
+    if (command == 'nsfwwallpaper') {
+        if (message.channel.nsfw) {
+            embed.setImage(HMfull.Nekos.nsfw.wallpaper());
+            return message.channel.send(embed);
+        }
+
+    }
+    if (command == 'futa') {
+        if (message.channel.nsfw) {
+            embed.setImage(HMfull.Nekos.nsfw.futarani());
+            return message.channel.send(embed);
+        }
+
+    }
+
 }
 );
 client.login(process.env.DISCORDJS_BOT_TOKEN);
