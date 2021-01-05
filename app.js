@@ -21,7 +21,32 @@ client.on('message', async message => {
 
     var command = message.content.toLowerCase().slice(settings.prefix.length).split(" ")[0];
     if (message.author.bot) return;
-    
+
+
+    if (command == 'test') {
+        
+      let numb = Math.floor(Math.random() * 2) + 1
+        if (numb == 1) {
+            message.channel.send('poo poo')
+        }
+        if (numb == 2) {
+            message.channel.send('pee pee')
+
+
+
+        }
+         
+
+       
+
+
+        
+
+
+    }
+
+
+
     if (command == 'neko') {
         let res = HMfull.HMtai.sfw.neko()
         message.channel.send(res.url);
