@@ -36,7 +36,6 @@ client.on('message', message => {
         if (!args[1]) return message.channel.send('Please mention voice channel ID/IDs')
 
         if(args[0] === 'everyone' && !move2) {
-        if (!idcheckchannel1) return message.channel.send('Please use a valid voice channel ID')
         let channel = message.guild.channels.cache.get(message.member.voice.channel.id);
         for (const [memberID, member] of channel.members)
             member.voice.setChannel(`${move}`);
