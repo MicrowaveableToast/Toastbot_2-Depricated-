@@ -45,11 +45,10 @@ client.on('message', message => {
     if (!mem.voice.channel) return message.channel.send('User is not in voice channel')
 
     if (!move2) {
-      if (!idcheckchannel1) return message.channel.send('Please use a valid voice channel ID')
+      
       mem.voice.setChannel(`${move}`)
     } else {
-      if (!idcheckchannel1) return message.channel.send('Please use a valid voice channel ID')
-      if (!idcheckchannel2) return message.channel.send('Please use a valid voice channel ID')
+      
       mem.voice.setChannel(`${move}`)
       mem.voice.setChannel(`${move2}`)
     }
