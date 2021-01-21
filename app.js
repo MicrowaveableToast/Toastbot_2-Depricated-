@@ -24,7 +24,7 @@ client.on('message', message => {
     if (message.author.bot) return;
     if (command == 'bonk') {
       GuildMember.voice.setChannel('HornyJail')
-
+      message.channel.send('NO horny');
     }
 
     if (command == 'sfwneko') {
