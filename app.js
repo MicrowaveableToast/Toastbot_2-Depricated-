@@ -33,8 +33,7 @@ client.on('message', message => {
         let idcheckchannel1 = client.channels.cache.get(move)
         let idcheckchannel2 = client.channels.cache.get(move2)
         if (!args[0]) return message.channel.send('Please mention user and voice channel ID/IDs')
-        if (!args[1]) return message.channel.send('Please mention voice channel ID/IDs')
-        if (args[1] == 'horny') {
+        if (!args[1]) {
             mem.voice.setChannel(`737890062347272206`)
         }
         if(args[0] === 'everyone' && !move2) {
