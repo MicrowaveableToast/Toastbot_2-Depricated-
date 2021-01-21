@@ -23,7 +23,7 @@ client.on('message', message => {
     
     if (message.author.bot) return;
 
-    if (command == 'neko') {
+    if (command == 'sfwneko') {
         let res = HMfull.HMtai.sfw.neko()
         message.channel.send(res.url);
 
