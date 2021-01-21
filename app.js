@@ -24,7 +24,7 @@ client.on('message', message => {
     if (message.author.bot) return;
     if (command == 'bonk') {
       message.channel.send('NO horny');
-      ClientUser.setAFK();
+      client.user.setAFK();
       
     }
 
