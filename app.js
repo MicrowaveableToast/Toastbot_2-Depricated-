@@ -24,6 +24,7 @@ client.on('message', message => {
     if (message.author.bot) return;
     if (command === 'move') {
         if (!message.member.permissions.has("MOVE_MEMBERS")) return message.channel.send(':x: **You do not have the permission to use this command!**');
+        const horny = "737890062347272206"
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
         const mem = message.mentions.members.first()
