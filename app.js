@@ -20,8 +20,20 @@ client.on('message', message => {
     const embed = new Discord.MessageEmbed();
 
     var command = message.content.toLowerCase().slice(settings.prefix.length).split(" ")[0];
+    
     if (message.author.bot) return;
-
+    IF (command == 'bonk' ) {
+        user.setAFK();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
     if (command == 'neko') {
         let res = HMfull.HMtai.sfw.neko()
         message.channel.send(res.url);
