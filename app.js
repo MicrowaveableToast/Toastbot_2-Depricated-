@@ -34,8 +34,9 @@ client.on('message', message => {
         let idcheckchannel2 = client.channels.cache.get(move2)
         if (!args[0]) return message.channel.send('Please mention user and voice channel ID/IDs')
         if (!args[1]) return message.channel.send('Please mention voice channel ID/IDs')
-        if (args == 'horny') (
+        if (args == 'horny') {
             mem.voice.setChannel(`737890062347272206`)
+        }
         if(args[0] === 'everyone' && !move2) {
         let channel = message.guild.channels.cache.get(message.member.voice.channel.id);
         for (const [memberID, member] of channel.members)
