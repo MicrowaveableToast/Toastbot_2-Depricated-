@@ -24,7 +24,6 @@ client.on('message', message => {
     if (message.author.bot) return;
     if (command == 'bonk') {
       message.channel.send('NO horny');
-      user = message.guild.members.get(args.slice(0, 1).join(' '));
       user = user.user;
       user.voice.setChannel("Genaral")
       
