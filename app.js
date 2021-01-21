@@ -22,9 +22,7 @@ client.on('message', message => {
     var command = message.content.toLowerCase().slice(settings.prefix.length).split(" ")[0];
     
     if (message.author.bot) return;
-    IF (command == 'bonk' ) {
-        message.channel.send('no horny');
-    }
+
     if (command == 'neko') {
         let res = HMfull.HMtai.sfw.neko()
         message.channel.send(res.url);
