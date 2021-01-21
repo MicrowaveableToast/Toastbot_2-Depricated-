@@ -22,6 +22,10 @@ client.on('message', message => {
     var command = message.content.toLowerCase().slice(settings.prefix.length).split(" ")[0];
     
     if (message.author.bot) return;
+    if (command == 'bonk') {
+      GuildMember.voice.setChannel('HornyJail')
+
+    }
 
     if (command == 'sfwneko') {
         let res = HMfull.HMtai.sfw.neko()
