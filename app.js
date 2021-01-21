@@ -22,11 +22,38 @@ client.on('message', message => {
     var command = message.content.toLowerCase().slice(settings.prefix.length).split(" ")[0];
     
     if (message.author.bot) return;
-    if (command == 'bonk') {
-      let GuildMember = message.author;
-      message.channel.send('NO horny');
-      GuildMember.voice.setChannel("Genaral")
-      
+    if (command === 'move') {
+        if (!message.member.permissions.has("MOVE_MEMBERS")) return message.channel.send(':x: **You do not have the permission to use this command!**');
+        const args = message.content.slice(prefix.length).trim().split(/ +/g);
+        const command = args.shift().toLowerCase();
+        const mem = message.mentions.members.first()
+        let move = args[1]; // Remember arrays are 0-based!.
+        let move2 = args[2];
+        let idcheckchannel1 = client.channels.cache.get(move)
+        let idcheckchannel2 = client.channels.cache.get(move2)
+        if (!args[0]) return message.channel.send('Please mention user and voice channel ID/IDs')
+        if (!args[1]) return message.channel.send('Please mention voice channel ID/IDs')
+
+        if(args[0] === 'everyone' && !move2) {
+        if (!idcheckchannel1) return message.channel.send('Please use a valid voice channel ID')
+        let channel = message.guild.channels.cache.get(message.member.voice.channel.id);
+        for (const [memberID, member] of channel.members)
+            member.voice.setChannel(`${move}`);
+  }
+
+  if (mem != null) { // << ensure that mem is not undefined
+    if (!mem.voice.channel) return message.channel.send('User is not in voice channel')
+
+    if (!move2) {
+      if (!idcheckchannel1) return message.channel.send('Please use a valid voice channel ID')
+      mem.voice.setChannel(`${move}`)
+    } else {
+      if (!idcheckchannel1) return message.channel.send('Please use a valid voice channel ID')
+      if (!idcheckchannel2) return message.channel.send('Please use a valid voice channel ID')
+      mem.voice.setChannel(`${move}`)
+      mem.voice.setChannel(`${move2}`)
+    }
+    }
     }
 
     if (command == 'sfwneko') {
