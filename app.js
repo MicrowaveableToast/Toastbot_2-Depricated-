@@ -293,10 +293,10 @@ client.on('message', message => {
         if (message.channel.nsfw) {
             let numb = Math.floor(Math.random() * 3) + 1
             if (numb >= 2) {
-                embed.setImage(HMfull.HMtai.nsfw.hentai());
-                return message.channel.send(embed);
+                let res = HMfull.HMtai.sfw.neko()
+                message.channel.send(res.url);
             }
-            if (numb == 1) {
+            if (numb == 2) {
                 async function Nekos() {
                     let res = await HMfull.Nekos.nsfw.classic()
                     message.channel.send(res.url);
