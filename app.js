@@ -293,7 +293,7 @@ client.on('message', message => {
         if (message.channel.nsfw) {
             let numb = Math.floor(Math.random() * 3) + 1
             if (numb >= 2) {
-                let res = HMfull.HMtai.sfw.neko()
+                let res = HMfull.HMtai.nsfw.hentai()
                 message.channel.send(res.url);
             }
             if (numb == 2) {
