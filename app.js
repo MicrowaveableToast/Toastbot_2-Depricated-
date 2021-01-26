@@ -296,7 +296,7 @@ client.on('message', message => {
                 let res = HMfull.HMtai.nsfw.hentai()
                 message.channel.send(res.url);
             }
-            if (numb == 2) {
+            if (numb == 1) {
                 async function Nekos() {
                     let res = await HMfull.Nekos.nsfw.classic()
                     message.channel.send(res.url);
