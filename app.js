@@ -291,8 +291,8 @@ client.on('message', message => {
      }
     if (command == 'hentai') {
         if (message.channel.nsfw) {
-            let numb = Math.floor(Math.random() * 2) + 1
-            if (numb == 1) {
+            let numb = Math.floor(Math.random() * 3) + 1
+            if (numb >= 2) {
                 embed.setImage(HMfull.HMtai.nsfw.hentai());
                 return message.channel.send(embed);
             }
