@@ -298,7 +298,7 @@ client.on('message', message => {
             }
             if (numb == 2) {
                 async function Nekos() {
-                    let res = await HMfull.Nekos.nsfw.hentai()
+                    let res = await HMfull.Nekos.nsfw.classic()
                     message.channel.send(res.url);
                 }
                 Nekos();
