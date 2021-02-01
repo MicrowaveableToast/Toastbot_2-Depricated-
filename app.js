@@ -94,7 +94,7 @@ client.on('message', message => {
     }
    if (command == 'help') {
         if (message.channel.nsfw) {
-           message.reply("https://github.com/MicrowaveableToast/Toastbot_2/blob/master/app.js");
+            return message.channel.send("https://github.com/MicrowaveableToast/Toastbot_2/blob/master/app.js");
         }
 
     }
