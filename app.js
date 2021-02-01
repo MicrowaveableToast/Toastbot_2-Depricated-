@@ -508,4 +508,4 @@ client.on('message', message => {
 }
 
 );
-client.login(process.env.DISCORDJS_BOT_TOKEN);
+client.login(process.env.TOKEN);
