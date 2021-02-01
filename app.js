@@ -508,4 +508,4 @@ client.on('message', message => {
 }
 
 );
-client.login(process.env.DISCORDJS_BOT_TOKEN);
+client.login("NzkzOTczMTc2NjE0NjQ5OTQ2.X-0DJA.FiXCD2ZqByPHvPK_ShWHTSZCwag");
