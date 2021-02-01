@@ -94,7 +94,7 @@ client.on('message', message => {
     }
    if (command == 'help') {
         if (message.channel.nsfw) {
-            return message.channel.send("https://github.com/MicrowaveableToast/Toastbot_2/blob/master/app.js");
+            message.channel.send("https://github.com/MicrowaveableToast/Toastbot_2/blob/master/app.js");
         }
 
     }
@@ -508,4 +508,4 @@ client.on('message', message => {
 }
 
 );
-client.login("NzkzOTczMTc2NjE0NjQ5OTQ2.X-0DJA.FiXCD2ZqByPHvPK_ShWHTSZCwag");
+client.login(process.env.DISCORDJS_BOT_TOKEN);
