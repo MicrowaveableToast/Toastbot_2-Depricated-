@@ -94,9 +94,7 @@ client.on('message', message => {
     }
    if (command == 'help') {
         if (message.channel.nsfw) {
-            return message.channel.send("sfwneko, computerwallpaper, ass, bdsm, manga, orgy, pantsu, glasses, cuckold, thighs, uniform, gangband, tentacles, gif, ZettaiRyouiki, nsfwMobileWallpaper
-boobs, anal, trap ( ͡° ͜ʖ ͡°), tits, keta, nsfwavatar, wallpaper, hentai, nsfwneko, yuri, femdom, (kinky one aren't ya), feet (hereatic), 
-pussy, ero, blowjob, masturbation, cum, ahegao 	");
+            return message.channel.send("sfwneko, computerwallpaper, ass, bdsm, manga, orgy, pantsu, glasses, cuckold, thighs, uniform, gangband, tentacles, gif, ZettaiRyouiki, nsfwMobileWallpaper, boobs, anal, trap ( ͡° ͜ʖ ͡°), tits, keta, nsfwavatar, wallpaper, hentai, nsfwneko, yuri, femdom, (kinky one arent ya), feet (hereatic), pussy, ero, blowjob, masturbation, cum, ahegao"); 
         }
 
     }
