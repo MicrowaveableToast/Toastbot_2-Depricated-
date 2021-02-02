@@ -106,11 +106,13 @@ client.on('message', async message => {
     }
 
     if (command == 'sfwneko') {
+        message.delete();
         let res = HMfull.HMtai.sfw.neko()
         message.channel.send(res.url);
 
     }
     if (command == 'computerwallpaper') {
+        message.delete();
         let res = HMfull.HMtai.sfw.wallpaper();
         message.channel.send(res.url);
     }
@@ -120,6 +122,7 @@ client.on('message', async message => {
     }
 
     if (command == 'ass') {
+        message.delete();
         if (message.channel.nsfw) {
             embed.setImage(hmtai.nsfw.ass());
             return message.channel.send(embed);
@@ -128,6 +131,7 @@ client.on('message', async message => {
     }
     if (command == 'bdsm') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.bdsm());
             return message.channel.send(embed);
         }
@@ -136,14 +140,17 @@ client.on('message', async message => {
   
     if (command == 'manga') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.manga());
             return message.channel.send(embed);
         }
-
+        
     }
     if (command == 'help') {
         if (message.channel.nsfw) {
+            let res = HMfull.HMtai.sfw.neko()
             return message.channel.send("sfwneko, computerwallpaper, ass, bdsm, manga, orgy, pantsu, glasses, cuckold, thighs, uniform, gangband, tentacles, gif, ZettaiRyouiki, nsfwMobileWallpaper, boobs, anal, trap ( ͡° ͜ʖ ͡°), tits, keta, nsfwavatar, wallpaper, hentai, nsfwneko, yuri, femdom, (kinky one arent ya), feet (hereatic), pussy, ero, blowjob, masturbation, cum, ahegao");
+            message.channel.send(res.url);
         }
 
     }
@@ -152,6 +159,7 @@ client.on('message', async message => {
     
     if (command == 'orgy') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.orgy());
             return message.channel.send(embed);
         }
@@ -160,6 +168,7 @@ client.on('message', async message => {
     
     if (command == 'pantsu') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.pantsu());
             return message.channel.send(embed);
         }
@@ -167,6 +176,7 @@ client.on('message', async message => {
     }
     if (command == 'glasses') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.glasses());
             return message.channel.send(embed);
         }
@@ -174,6 +184,7 @@ client.on('message', async message => {
     }
     if (command == 'cuckold') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.cuckold());
             return message.channel.send(embed);
         }
@@ -183,6 +194,7 @@ client.on('message', async message => {
    
     if (command == 'thighs') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.thighs());
             return message.channel.send(embed);
         }
@@ -192,6 +204,7 @@ client.on('message', async message => {
     
     if (command == 'uniform') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.uniform());
             return message.channel.send(embed);
         }
@@ -199,6 +212,7 @@ client.on('message', async message => {
     }
     if (command == 'gangbang') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.gangbang());
             return message.channel.send(embed);
         }
@@ -206,6 +220,7 @@ client.on('message', async message => {
     }
     if (command == 'tentacles') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.tentacles());
             return message.channel.send(embed);
         }
@@ -213,6 +228,7 @@ client.on('message', async message => {
     }
     if (command == 'gif') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.gif());
             return message.channel.send(embed);
         }
@@ -224,6 +240,7 @@ client.on('message', async message => {
 
     if (command == 'zettaiRyouiki') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.zettaiRyouiki());
             return message.channel.send(embed);
         }
@@ -231,6 +248,7 @@ client.on('message', async message => {
     }
     if (command == 'nsfwmobilewallpaper') {
         if (message.channel.nsfw) {
+            message.delete();
             embed.setImage(hmtai.nsfw.nsfwMobileWallpaper());
             return message.channel.send(embed);
         }
@@ -247,6 +265,7 @@ client.on('message', async message => {
     if (command == 'kuni') {
         if (message.channel.nsfw) {
             async function Nekos() {
+                message.delete();
                 let res = await HMfull.Nekos.nsfw.kuni()
                 message.channel.send(res.url); 
             } 
@@ -260,6 +279,7 @@ client.on('message', async message => {
     if (command == 'boobs') {
         if (message.channel.nsfw) {
             async function Nekos() {
+                message.delete();
                 let res = await HMfull.Nekos.nsfw.boobs()
                 message.channel.send(res.url); 
             } 
@@ -270,6 +290,7 @@ client.on('message', async message => {
     if (command == 'anal') {
         if (message.channel.nsfw) {
             async function Nekos() {
+                message.delete();
                 let res = await HMfull.Nekos.nsfw.anal()
                 message.channel.send(res.url); 
             } 
@@ -280,6 +301,7 @@ client.on('message', async message => {
     if (command == 'trap') {
         if (message.channel.nsfw) {
             async function Nekos() {
+                message.delete();
                 let res = await HMfull.Nekos.nsfw.trap()
                 message.channel.send(res.url); 
             } 
@@ -294,6 +316,7 @@ client.on('message', async message => {
        if (command == 'tits') {
         if (message.channel.nsfw) {
             async function Nekos() {
+                message.delete();
                 let res = await HMfull.Nekos.nsfw.tits()
                 message.channel.send(res.url); 
             } 
@@ -308,6 +331,7 @@ client.on('message', async message => {
        if (command == 'keta') {
         if (message.channel.nsfw) {
             async function Nekos() {
+                message.delete();
                 let res = await HMfull.Nekos.nsfw.keta()
                 message.channel.send(res.url); 
             } 
@@ -323,6 +347,7 @@ client.on('message', async message => {
        if (command == 'nsfwavatar') {
         if (message.channel.nsfw) {
             async function Nekos() {
+                message.delete();
                 let res = await HMfull.Nekos.nsfw.avatar()
                 message.channel.send(res.url); 
             } 
@@ -336,6 +361,7 @@ client.on('message', async message => {
     if (command == 'wallpaper') {
         if (message.channel.nsfw) {
             async function Nekos() {
+                message.delete();
                 let res = await HMfull.Nekos.nsfw.wallpaper()
                 message.channel.send(res.url); 
             } 
@@ -345,6 +371,7 @@ client.on('message', async message => {
      }
     if (command == 'hentai') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 3) + 1
             if (numb >= 2) {
                 let res = HMfull.HMtai.nsfw.hentai()
@@ -363,6 +390,7 @@ client.on('message', async message => {
     }
     if (command == 'nsfwneko') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
                 embed.setImage(HMfull.HMtai.nsfw.neko());
@@ -381,6 +409,7 @@ client.on('message', async message => {
     }
     if (command == 'yuri') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
                 embed.setImage(HMfull.HMtai.nsfw.yuri());
@@ -399,6 +428,7 @@ client.on('message', async message => {
     }
     if (command == 'femdom') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
                 embed.setImage(HMfull.HMtai.nsfw.femdom());
@@ -417,6 +447,7 @@ client.on('message', async message => {
     }
     if (command == 'feet') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
                 embed.setImage(HMfull.HMtai.nsfw.foot());
@@ -435,6 +466,7 @@ client.on('message', async message => {
     }
     if (command == 'pussy') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
                 embed.setImage(HMfull.HMtai.nsfw.vagina());
@@ -453,6 +485,7 @@ client.on('message', async message => {
     }
     if (command == 'ero') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
                 embed.setImage(HMfull.HMtai.nsfw.ero());
@@ -471,6 +504,7 @@ client.on('message', async message => {
     }
     if (command == 'blowjob') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
                 embed.setImage(HMfull.HMtai.nsfw.blowjob());
@@ -489,6 +523,7 @@ client.on('message', async message => {
     }
     if (command == 'masturbation') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
                 embed.setImage(HMfull.HMtai.nsfw.masterbation());
@@ -507,6 +542,7 @@ client.on('message', async message => {
     }
     if (command == 'cum') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
                 embed.setImage(HMfull.HMtai.nsfw.cum());
@@ -525,6 +561,7 @@ client.on('message', async message => {
     }
     if (command == 'ahegao') {
         if (message.channel.nsfw) {
+            message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
                 embed.setImage(HMfull.HMtai.nsfw.ahegao());
