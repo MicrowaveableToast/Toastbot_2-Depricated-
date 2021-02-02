@@ -9,7 +9,6 @@ const settings = {
     token: "YOUR_BOT_TOKEN",
 };
 const hmtai = require("hmtai");
-const client = new Discord.Client();
 const { Users, CurrencyShop } = require('./dbObjects');
 const { Op } = require('sequelize');
 const currency = new Discord.Collection();
