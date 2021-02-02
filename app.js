@@ -25,7 +25,7 @@ client.on('message', async message => {
     var command = message.content.toLowerCase().slice(settings.prefix.length).split(" ")[0];
     
     if (message.author.bot) return;
-    currency.add(message.author.id, 1);
+    
     
 
 
