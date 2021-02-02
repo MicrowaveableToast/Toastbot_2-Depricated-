@@ -438,7 +438,7 @@ client.on('message', message => {
 
         }
     }
-    if (command == 'masterbation') {
+    if (command == 'masturbation') {
         if (message.channel.nsfw) {
             let numb = Math.floor(Math.random() * 2) + 1
             if (numb == 1) {
