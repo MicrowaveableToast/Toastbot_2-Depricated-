@@ -65,7 +65,10 @@ client.on('message', async message => {
 
 
 
-
+    if (command == 'test') {
+        message.delete();
+        message.reply('test');
+    }
 
 
     if (command === 'bonk') {
