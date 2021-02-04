@@ -580,7 +580,7 @@ client.on('message', async message => {
     }
     
     if (command == 'executeOrder66') {
-        return message.channel.send('66 users banned') 
+        message.channel.send('66 users banned');
     } 
    
 
