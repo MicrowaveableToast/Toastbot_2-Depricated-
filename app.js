@@ -64,8 +64,8 @@ client.on('message', async message => {
 
 
     if (command == 'executeorder66') {
-        let numb = Math.floor(Math.random() * 9999999999999) + 1
-        message.channel.send(numb() "users banned");
+        var numb = Math.floor(Math.random() * 9999999999999) + 1
+        message.channel.send(numb "users banned");
         
         
         
