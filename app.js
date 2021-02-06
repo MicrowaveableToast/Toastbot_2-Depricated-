@@ -6,7 +6,7 @@ const client = new Client();
 const prefix = "t/";
 const settings = {
     prefix: "t/",
-    token: "YOUR_BOT_TOKEN",
+    
 };
 const hmtai = require("hmtai");
 
@@ -22,8 +22,8 @@ client.on('ready', async () => {
 client.on('message', async message => {
     const embed = new Discord.MessageEmbed();
 
-    var command = message.content.toLowerCase().slice(settings.prefix.length).split(" ")[0];
-    const args = message.content.slice(prefix.length).trim().split(' ');
+    const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
     if (message.author.bot) return;
     
     
@@ -54,12 +54,7 @@ client.on('message', async message => {
 
 
 
-    if (command == 'e') {
-        message.delete();
-        message.channel.send(`${args[1 && 2 && 3 && 4 && 5 && 6 && 7 && 8 && 9 && 10 && 11 && 12 && 13 && 14 && 15 && 16 && 17 && 18 && 19 && 20 && 21 && 22 && 23 && 24 && 25 && 26 && 27 && 28 && 29 && 30 && 31 && 32 && 33 ]}`);
-        
-   
-    }
+  
 
 
 
