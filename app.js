@@ -54,8 +54,12 @@ client.on('message', async message => {
 
 
 
-
-
+    if (command == 'e') {
+        
+        message.channel.send(`${args[0]}`);
+        
+   
+    }
 
 
 
