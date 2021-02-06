@@ -23,7 +23,7 @@ client.on('message', async message => {
     const embed = new Discord.MessageEmbed();
 
     var command = message.content.toLowerCase().slice(settings.prefix.length).split(" ")[0];
-    
+    const args = message.content.slice(prefix.length).trim().split(' ');
     if (message.author.bot) return;
     
     
