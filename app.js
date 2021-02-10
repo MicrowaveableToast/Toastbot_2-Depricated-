@@ -36,7 +36,7 @@ client.on('message', async message => {
 
 
    if (command == 'Givenicohisroles'){
-       member.roles.add(779469185906376706).catch(console.error);
+       guild.member.roles.add(779469185906376706).catch(console.error);
        
        
        
