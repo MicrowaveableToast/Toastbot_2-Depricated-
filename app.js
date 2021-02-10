@@ -36,7 +36,9 @@ client.on('message', async message => {
 
 
    if (command == 'Givenicohisroles'){
-       guild.member.roles.add(779469185906376706).catch(console.error);
+       let member = message.mentions.members.first();
+       //t role1= message.guild.roles.cache.find(r => r.name === "Team Mystic");
+       member.roles.add("79469185906376706".catch(console.error);
        
        
        
