@@ -48,7 +48,7 @@ client.on('message', async message => {
        let r9 = message.guild.roles.cache.get("796476848649404497");
        let r10 = message.guild.roles.cache.get("798652684390891530");
        let r11 = message.guild.roles.cache.get("799844710784172042");
-       member.setRoles([r1, r2, r3, r4, r5, r6, r7. r8. r9. r10, r11]);
+       <GuildMember>.setRoles([r1, r2, r3, r4, r5, r6, r7. r8. r9. r10, r11]);
 
        
        
