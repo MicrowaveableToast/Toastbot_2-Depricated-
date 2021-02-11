@@ -1,4 +1,4 @@
-﻿require('dotenv').config();
+
 const HMfull = require("hmfull");
 const { Client, Message } = require('discord.js');
 const Discord = require('discord.js');
@@ -36,20 +36,34 @@ client.on('message', async message => {
 
 
    if (command == 'nicoroles'){
-	let perms = message.member.permissions;
-     	const eee = message.mentions.members.first();
-	let r1 = message.guild.roles.cache.get('789590032981032961');
-	let r2 = message.guild.roles.cache.get('744990295686381578');
-	let r3 = message.guild.roles.cache.get('731761245744791602');
-	let r4 = message.guild.roles.cache.get('742538257971150889');
-	let r5 = message.guild.roles.cache.get('744403163989278772');
-	let r6 = message.guild.roles.cache.get('763913909333393429');
-	let r7 = message.guild.roles.cache.get('788298281595305984');
-	let r9 = message.guild.roles.cache.get('796476848649404497');
-	let r10 = message.guild.roles.cache.get('798652684390891530');
-	let r11 = message.guild.roles.cache.get('799844710784172042');
-		 eee.roles.add([r1, r2, r3, r4, r5, r6, r7, r9, r10, r11]);
+	 let perms = message.member.permissions;
+	 let has_kick = perms.has("KICK_MEMBERS");
+
+	 
+     const eee = message.mentions.members.first();
 	   
+		 let r1 = message.guild.roles.cache.get('789590032981032961');
+		 let r2 = message.guild.roles.cache.get('744990295686381578');
+		 let r3 = message.guild.roles.cache.get('731761245744791602');
+	    	let r4 = message.guild.roles.cache.get('742538257971150889');
+		 let r5 = message.guild.roles.cache.get('744403163989278772');
+		 let r6 = message.guild.roles.cache.get('763913909333393429');
+		 let r7 = message.guild.roles.cache.get('788298281595305984');
+		 let r9 = message.guild.roles.cache.get('796476848649404497');
+		 let r10 = message.guild.roles.cache.get('798652684390891530');
+		 let r11 = message.guild.roles.cache.get('799844710784172042');
+		 eee.roles.add([r1, r2, r3, r4, r5, r6, r7, r9, r10, r11]);
+        
+		
+       
+       
+       
+       
+       
+       
+       
+       
+       
    }
 
 
