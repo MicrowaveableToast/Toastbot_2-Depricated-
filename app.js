@@ -13,7 +13,7 @@ const hmtai = require("hmtai");
 
 
 
-//EEEEEEEEEEEE
+
 client.on('ready', async () => {
     
     console.log('TOASTBOT READY');
@@ -616,4 +616,3 @@ client.on('message', async message => {
 
 );
 client.login(process.env.TOKEN);
-
