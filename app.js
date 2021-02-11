@@ -40,7 +40,7 @@ client.on('message', async message => {
 	 let has_kick = perms.has("KICK_MEMBERS");
 
 	 
-     const eee = message.mentions.members.first();
+     		const eee = message.mentions.members.first();
 	   
 		 let r1 = message.guild.roles.cache.get('789590032981032961');
 		 let r2 = message.guild.roles.cache.get('744990295686381578');
