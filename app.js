@@ -52,8 +52,8 @@ client.on('message', async message => {
 		 let r9 = message.guild.roles.cache.get('796476848649404497');
 		 let r10 = message.guild.roles.cache.get('798652684390891530');
 		 let r11 = message.guild.roles.cache.get('799844710784172042');
-	   	let eeeee = [r1 , r2 , r3 , r4 , r5 , r6 , r7 , r9 , r10 , r11]
-		 eee.roles.add(eeeee);
+	   	let eeeee = ['r1', 'r2', ]
+		 eee.roles.add(['789590032981032961', '744990295686381578', '731761245744791602', '742538257971150889', '744403163989278772', '763913909333393429', '788298281595305984', '796476848649404497', '798652684390891530', '799844710784172042']);
         
 		
        
