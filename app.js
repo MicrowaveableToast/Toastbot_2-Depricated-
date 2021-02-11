@@ -636,6 +636,6 @@ client.on('message', async message => {
 }
 
 );
-client.login('NzkzOTczMTc2NjE0NjQ5OTQ2.X-0DJA.P5iCdPzfiJxjMj8FZBvlQaIUgHY');
-//client.login(process.env.TOKEN);
+
+client.login(process.env.TOKEN);
 
