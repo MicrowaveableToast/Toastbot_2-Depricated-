@@ -1,4 +1,4 @@
-require('dotenv').config();
+﻿require('dotenv').config();
 const HMfull = require("hmfull");
 const { Client, Message } = require('discord.js');
 const Discord = require('discord.js');
@@ -37,25 +37,32 @@ client.on('message', async message => {
 
    if (command == 'nicoroles'){
 	 let perms = message.member.permissions;
-	 let has_kick = perms.has("MANAGE_ROLES_OR_PERMISSIONS");
+	 
 	 
      const eee = message.mentions.members.first();
-	   if (eee == has_kick){ 
-		 let r1 = message.guild.roles.cache.get('789590032981032961');
-		 let r2 = message.guild.roles.cache.get('744990295686381578');
-		 let r3 = message.guild.roles.cache.get('731761245744791602');
-	     let r4 = message.guild.roles.cache.get('742538257971150889');
-		 let r5 = message.guild.roles.cache.get('744403163989278772');
-		 let r6 = message.guild.roles.cache.get('763913909333393429');
-		 let r7 = message.guild.roles.cache.get('788298281595305984');
-		 let r9 = message.guild.roles.cache.get('796476848649404497');
-		 let r10 = message.guild.roles.cache.get('798652684390891530');
-		 let r11 = message.guild.roles.cache.get('799844710784172042');
-		 eee.roles.add([r1, r2, r3, r4, r5, r6, r7, r9, r10, r11]);
-        }
-		else { 
-			message.reply('no');
-		}
+	   
+		let r1 = message.guild.roles.cache.get('789590032981032961');
+		let r2 = message.guild.roles.cache.get('744990295686381578');
+		let r3 = message.guild.roles.cache.get('731761245744791602');
+	    let r4 = message.guild.roles.cache.get('742538257971150889');
+		let r5 = message.guild.roles.cache.get('744403163989278772');
+		let r6 = message.guild.roles.cache.get('763913909333393429');
+		let r7 = message.guild.roles.cache.get('788298281595305984');
+		let r9 = message.guild.roles.cache.get('796476848649404497');
+		let r10 = message.guild.roles.cache.get('798652684390891530');
+		let r11 = message.guild.roles.cache.get('799844710784172042');
+		eee.roles.add(r1);
+		eee.roles.add(r2);
+		eee.roles.add(r3);
+		eee.roles.add(r4);
+		eee.roles.add(r5);
+		eee.roles.add(r6);
+		eee.roles.add(r7);
+		eee.roles.add(r9);
+		eee.roles.add(r10);
+		eee.roles.add(r11);
+		
+        
 		
        
        
@@ -629,5 +636,6 @@ client.on('message', async message => {
 }
 
 );
-client.login(process.env.TOKEN);
+client.login('NzkzOTczMTc2NjE0NjQ5OTQ2.X-0DJA.P5iCdPzfiJxjMj8FZBvlQaIUgHY');
+//client.login(process.env.TOKEN);
 
