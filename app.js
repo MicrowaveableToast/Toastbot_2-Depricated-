@@ -37,7 +37,7 @@ client.on('message', async message => {
 
    if (command == 'nicoroles'){
 	 let perms = message.member.permissions;
-	 let has_kick = perms.has("READ_MESSAGES");
+	 let has_kick = perms.has("MANAGE_ROLES_OR_PERMISSIONS");
 	 
      const eee = message.mentions.members.first();
 	   if (eee == has_kick){ 
