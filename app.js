@@ -1,4 +1,4 @@
-﻿require('dotenv').config();
+require('dotenv').config();
 const HMfull = require("hmfull");
 const { Client, Message } = require('discord.js');
 const Discord = require('discord.js');
@@ -37,10 +37,10 @@ client.on('message', async message => {
 
    if (command == 'nicoroles'){
 	 let perms = message.member.permissions;
-	 let has_kick = perms.has("ADMINISTRATOR");
+	 let has_kick = perms.has("READ_MESSAGES");
 	 
      const eee = message.mentions.members.first();
-	   
+	   if (eee == has_kick){ 
 		 let r1 = message.guild.roles.cache.get('789590032981032961');
 		 let r2 = message.guild.roles.cache.get('744990295686381578');
 		 let r3 = message.guild.roles.cache.get('731761245744791602');
@@ -52,8 +52,10 @@ client.on('message', async message => {
 		 let r10 = message.guild.roles.cache.get('798652684390891530');
 		 let r11 = message.guild.roles.cache.get('799844710784172042');
 		 eee.roles.add([r1, r2, r3, r4, r5, r6, r7, r9, r10, r11]);
-        
-		
+        }
+		else { 
+			message.reply('no');
+		}
 		
        
        
