@@ -34,7 +34,21 @@ client.on('message', async message => {
 
 
 
-
+	if (command == 'del') {
+		let fuck = args[1]
+		message.channel.bulkDelete(fuck)
+		message.channel.send('deleted' fuck ' messages');
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
    if (command == 'nicoroles'){
 	 let perms = message.member.permissions;
 	 
