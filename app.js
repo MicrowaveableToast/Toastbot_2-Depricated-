@@ -35,6 +35,7 @@ client.on('message', async message => {
 
 
 	if (command == 'del') {
+		message.delete();
 		let fuck = args[0]
 		message.channel.bulkDelete(fuck)
 		
