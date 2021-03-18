@@ -540,7 +540,7 @@ client.on('message', async message => {
     if (command == 'hentai') {
         if (message.channel.nsfw) {
             message.delete();
-            let numb = Math.floor(Math.random() * 3) + 1
+            let numb = Math.floor(Math.random() * 5) + 1
             if (numb = 2) {
                 let res = HMfull.HMtai.nsfw.hentai()
                 message.channel.send(res.url);
@@ -553,7 +553,7 @@ client.on('message', async message => {
                 Nekos();
 
             }
-            if (numb == 3) {
+            if (numb == >=3) {
               const image = await nsfw.hentai();
               const embed = new Discord.MessageEmbed()
               .setImage(image);
