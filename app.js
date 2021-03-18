@@ -553,7 +553,7 @@ client.on('message', async message => {
                 Nekos();
 
             }
-            if (numb == >=3) {
+            if (numb >= 3) {
               const image = await nsfw.hentai();
               const embed = new Discord.MessageEmbed()
               .setImage(image);
