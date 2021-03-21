@@ -11,7 +11,7 @@ const settings = {
     
 };
 const hmtai = require("hmtai");
-const lolis = require('lolis-random');
+
 
 
 
@@ -23,8 +23,8 @@ client.on('ready', async () => {
 client.on('message', async message => {
     const embed = new Discord.MessageEmbed();
 
-    const args = message.content.slice(settings.prefix.length).trim();
-    const command = args.shift;
+    const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
     if (message.author.bot) return;
     
     
@@ -251,10 +251,6 @@ client.on('message', async message => {
         }
 
     }
-    if (command == 'loli') {
-		let loliRandom = await lolis.getLoli();
-		message.channel.send(loliRandom);
-	}
     if (command == 'cuckold') {
         if (message.channel.nsfw) {
             message.delete();
