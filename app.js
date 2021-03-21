@@ -165,7 +165,7 @@ client.on('message', async message => {
     }
     }
     if (command == 'getmanga') {
-       let ID = args{0}
+       let ID = args[0]
        const val = await api.getID(ID).json()
        message.channel.send(val.base.url)
 
