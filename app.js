@@ -251,7 +251,7 @@ client.on('message', async message => {
         }
 
     }
-	if (command == 'loli') {
+    if (command == 'loli') {
 		let loliRandom = await lolis.getLoli();
 		message.channel.send(loliRandom);
 	}
