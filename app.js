@@ -11,8 +11,7 @@ const settings = {
     
 };
 const hmtai = require("hmtai");
-const API = require('kasu.nhentaiapi.js');
-const api = new API();
+const generateHentai = require('gen-hentai');
 
 
 
@@ -111,7 +110,11 @@ client.on('message', async message => {
   
 
 
+    if (command == rhentai) {
+        let hentaiPic = generateHentai();
+        message.channel.send(hentaiPic)
 
+    }
 
 
 
@@ -164,11 +167,7 @@ client.on('message', async message => {
     }
     }
     }
-    if (command == 'getmanga') {
-       let ID = args[0]
-       const val = await api.getID(ID).json();
-       message.channel.send(val.base.url);
-    }
+
     if (command == 'sfwneko') {
         message.delete();
         let res = HMfull.HMtai.sfw.neko()
