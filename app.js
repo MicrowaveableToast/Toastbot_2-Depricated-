@@ -24,7 +24,7 @@ client.on('message', async message => {
     const embed = new Discord.MessageEmbed();
 
     const args = message.content.slice(settings.prefix.length).trim();
-    const command = args.toLowerCase();
+    const command = args.shift.toLowerCase();
     if (message.author.bot) return;
     
     
