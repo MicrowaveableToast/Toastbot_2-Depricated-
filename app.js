@@ -166,9 +166,8 @@ client.on('message', async message => {
     }
     if (command == 'getmanga') {
        let ID = args[0]
-       const val = await api.getID(ID).json()
-       message.channel.send(val.base.url)
-
+       const val = await api.getID(ID).json();
+       message.channel.send(val.base.url);
     }
     if (command == 'sfwneko') {
         message.delete();
