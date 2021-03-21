@@ -252,35 +252,8 @@ client.on('message', async message => {
 
     }
 	if (command == 'loli') {
-		message.channel.send('The FBI has been alerted to your location');
-		if (command == 'loli') {
-		message.channel.send('wow you really think that running it a second time is gonna work');
-			if (command == 'loli') {
-			message.channel.send('fine');
-			let loliRandom = await lolis.getLoli()
-			message.channel.send(loliRandom)
-			}
-			else {
-				return();
-		}
-		else (
-		return();
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		let loliRandom = await lolis.getLoli();
+		message.channel.send(loliRandom);
 	}
     if (command == 'cuckold') {
         if (message.channel.nsfw) {
