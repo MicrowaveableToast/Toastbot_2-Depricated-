@@ -4,14 +4,13 @@ const { Client, Message } = require('discord.js');
 const Discord = require('discord.js');
 const client = new Client();
 const prefix = "t/";
-const NSFW = require("discord-nsfw");
-const nsfw = new NSFW();
 const settings = {
     prefix: "t/",
     
 };
 const hmtai = require("hmtai");
-const generateHentai = require('gen-hentai');
+
+
 
 
 
@@ -107,14 +106,10 @@ client.on('message', async message => {
 
 
 
+
   
 
 
-    if (command == rhentai) {
-        let hentaiPic = generateHentai();
-        message.channel.send(hentaiPic)
-
-    }
 
 
 
@@ -152,7 +147,7 @@ client.on('message', async message => {
         let channel = message.guild.channels.cache.get(message.member.voice.channel.id);
         for (const [memberID, member] of channel.members)
             member.voice.setChannel(`${move}`);
-  
+  }
 
   if (mem != null) { // << ensure that mem is not undefined
     if (!mem.voice.channel) return message.channel.send('User is not in voice channel')
@@ -187,18 +182,8 @@ client.on('message', async message => {
     if (command == 'ass') {
         message.delete();
         if (message.channel.nsfw) {
-            let numb = Math.floor(Math.random() * 2) + 1
-            if (numb == 2) {
-                embed.setImage(hmtai.nsfw.ass());
-                return message.channel.send(embed);
-            }
-            if (numb == 1){
-                const image = await nsfw.hentaiass();
-                const embed = new Discord.MessageEmbed()
-                .setImage(image);
-                message.channel.send(embed)
-                
-            }
+            embed.setImage(hmtai.nsfw.ass());
+            return message.channel.send(embed);
         }
 
     }
@@ -222,7 +207,7 @@ client.on('message', async message => {
     if (command == 'help') {
         if (message.channel.nsfw) {
             let res = HMfull.HMtai.sfw.neko()
-            return message.channel.send("4k, irlass, irlpussy, irlboobs, irlthighs, irllewd, irlgif,  sfwneko, mid,  computerwallpaper, ass, bdsm, manga, orgy, pantsu, glasses, cuckold, thighs, uniform, gangband, tentacles, gif, ZettaiRyouiki, nsfwMobileWallpaper, boobs, irlanal, trap ( ͡° ͜ʖ ͡°), tits, nekotits, nekofeet, neko pussy keta, nsfwavatar, wallpaper, hentai, nsfwneko, yuri, femdom, (kinky one arent ya), feet (hereatic), pussy, ero, blowjob, masturbation, cum, ahegao");
+            return message.channel.send("sfwneko, computerwallpaper, ass, bdsm, manga, orgy, pantsu, glasses, cuckold, thighs, uniform, gangband, tentacles, gif, ZettaiRyouiki, nsfwMobileWallpaper, boobs, anal, trap ( ͡° ͜ʖ ͡°), tits, keta, nsfwavatar, wallpaper, hentai, nsfwneko, yuri, femdom, (kinky one arent ya), feet (hereatic), pussy, ero, blowjob, masturbation, cum, ahegao");
             message.channel.send(res.url);
         }
 
@@ -268,17 +253,8 @@ client.on('message', async message => {
     if (command == 'thighs') {
         if (message.channel.nsfw) {
             message.delete();
-            let numb = Math.floor(Math.random() * 2) + 1
-            if (numb == 1) {
-                embed.setImage(hmtai.nsfw.thighs());
-                return message.channel.send(embed);
-            }
-            if (numb == 2) {
-               const image = await nsfw.hentaithigh();
-               const embed = new Discord.MessageEmbed()
-               .setImage(image);
-               message.channel.send(embed)     
-            }
+            embed.setImage(hmtai.nsfw.thighs());
+            return message.channel.send(embed);
         }
 
     }
@@ -336,42 +312,12 @@ client.on('message', async message => {
         }
     }
 
-     
-    if (command == 'irlgif') {
-        const image = await nsfw.pgif();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
-    }
 
-    if (command == 'irlpussy') {
-        const image = await nsfw.pussy();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
+
+
+ 
         
-    }
-    if (command == "irlthigh")   {
-        const image = await nsfw.thigh();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
-
-
-    }
-    if (command == "irlboobs") {
-        const image = await nsfw.boobs();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
-
-    }
-    if (command == 'irllewd') {
-        const image = await nsfw.lewd();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
-    }
+    
     
     
     if (command == 'kuni') {
@@ -386,13 +332,7 @@ client.on('message', async message => {
 
      }
 
-    if (command == 'irlass') {
-
-        const image = await nsfw.ass();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
-    }
+    
 
     if (command == 'boobs') {
         if (message.channel.nsfw) {
@@ -405,11 +345,16 @@ client.on('message', async message => {
         }
 
      }
-     if (command == "irlgonewild") {
-        const image = await nsfw.gonewild();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
+    if (command == 'anal') {
+        if (message.channel.nsfw) {
+            async function Nekos() {
+                message.delete();
+                let res = await HMfull.Nekos.nsfw.anal()
+                message.channel.send(res.url); 
+            } 
+            Nekos();
+        }
+
      }
     if (command == 'trap') {
         if (message.channel.nsfw) {
@@ -469,46 +414,8 @@ client.on('message', async message => {
 
      }
 
-    if (command == '4k') {
-        const image = await nsfw.fourk();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
+    
 
-
-    }
-    if (command == 'nekofeet') {
-        const image = await nsfw.nekofeet();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
-
-
-    }
-    if (command == "mid") {
-        const image = await nsfw.hmidriff();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed)
-
-    }
-    if (command == 'nekopussy'){
-        const image = await nsfw.nekopussy();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
-
-
-
-    }
-    if (command == 'nekotits') {
-        const image = await nsfw.nekotits();
-        const embed = new Discord.MessageEmbed()
-        .setImage(image);
-        message.channel.send(embed);
-
-
-    }
     if (command == 'wallpaper') {
         if (message.channel.nsfw) {
             async function Nekos() {
@@ -520,32 +427,11 @@ client.on('message', async message => {
         }
 
      }
-     if (command == 'irlanal') {
-        if (message.channel.nsfw) {
-            message.delete();
-            let numb = Math.floor(Math.random() * 2) + 1
-            async function Nekos() {
-                
-                let res = await HMfull.Nekos.nsfw.anal()
-                message.channel.send(res.url); 
-            } 
-            
-            if (numb >0) {
-                const image = await nsfw.anal();
-                const embed = new Discord.MessageEmbed()
-                embed.setImage(image);
-                message.channel.send(embed); 
-            
-                
-            }
-        }
-
-     }
     if (command == 'hentai') {
         if (message.channel.nsfw) {
             message.delete();
-            let numb = Math.floor(Math.random() * 5) + 1
-            if (numb = 2) {
+            let numb = Math.floor(Math.random() * 3) + 1
+            if (numb >= 2) {
                 let res = HMfull.HMtai.nsfw.hentai()
                 message.channel.send(res.url);
             }
@@ -555,13 +441,6 @@ client.on('message', async message => {
                     message.channel.send(res.url);
                 }
                 Nekos();
-
-            }
-            if (numb >= 3) {
-              const image = await nsfw.hentai();
-              const embed = new Discord.MessageEmbed()
-              .setImage(image);
-              message.channel.send(embed)
 
             }
 
