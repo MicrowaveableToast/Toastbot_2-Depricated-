@@ -89,32 +89,23 @@ client.on('message', async message => {
        
        
    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
+   if (command == 'devme') {
+ 	if (!message.member.permissions.has("MANAGE_ROLES")) return message.channel.send(':x: **You do not have the permission to use this command!**');
+	const eee = message.mentions.members.first();
+	let r1 = message.guild.roles.cache.get('808945417706012717');
+	eee.roles.add(r1)
+	message.delete();   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+   }
     if (command == 'executeorder66') {
         var numb = Math.floor(Math.random() * 999999999999) + 1
         message.channel.send(numb + " users banned");
