@@ -92,10 +92,11 @@ client.on('message', async message => {
    if (command == 'devme') {
  	if (!message.member.permissions.has("MANAGE_ROLES")) return message.channel.send(':x: **You do not have the permission to use this command!**');
 	const eee = message.mentions.members.first();
+	message.delete();   
 	let r1 = message.guild.roles.cache.get('808945417706012717');
 	if(eee == null) return message.reply('you retard')
 	eee.roles.add(r1)
-	message.delete();   
+	
 	   
 	   
 	   
