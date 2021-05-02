@@ -67,7 +67,7 @@ client.on('message', async message => {
             return message.channel.send('no');
         }
         if (amound > profileData.coins) return message.channel.send(`you're trying to scew then bank`);
-        if (number >= 42) {
+        if (number >= 12) {
             await profileModel.findOneAndUpdate({
                 userID: message.author.id
 
