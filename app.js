@@ -7,13 +7,15 @@ const client = new Client();
 const prefix = "t/";
 const NSFW = require("discord-nsfw");
 const nsfw = new NSFW();
+const mongoose = require('mongoose')
 const settings = {
     prefix: "t/",
     
 };
+const profileModel = require('./models/proflieSchema.js')
 const hmtai = require("hmtai");
 const nHentai = require("@v0idpointer/nhentai.js");
-
+const cool = new Set();
 const { API, } = require('nhentai-api');
 const api = new API();
 client.on('ready', async () => {
@@ -23,19 +25,243 @@ client.on('ready', async () => {
 
 client.on('message', async message => {
     const embed = new Discord.MessageEmbed();
-
+    let profileData;
+    try {
+        profileData = await profileModel.findOne({ userID: message.author.id });
+    } catch (err) {
+        console.log(err);
+    }
     const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     if (message.author.bot) return;
     
     
+    if (command == 'give') {
+        if (message.author.id == 693702960189800498) {
+            const amount = args[1]
+            const target = message.mentions.members.first();
+            try {
+                const targetData = await profileModel.findOne({ userID: target.id })
+                await profileModel.findOneAndUpdate({
+                    userID: target.id
+
+                }, {
+                        $inc: {
+                        coins: amount,
+                    }
+                    
+                })
+            } catch (err) {
+                console.log(err);
+            }
+
+        } else {
+            message.channel.send(`your are not Toast#0215`)
+        }
+    }
+
+    if (command == 'gamble') {
+        const amound = args[0]
+        const number = Math.floor(Math.random() * 100) + 1;
+        if (amound % 1 != 0 || amound <= 0) {
+            return message.channel.send('no');
+        }
+        if (amound > profileData.coins) return message.channel.send(`you're trying to scew then bank`);
+        if (number >= 63) {
+            await profileModel.findOneAndUpdate({
+                userID: message.author.id
+
+            }, {
+                $inc: {
+                    coins: -amound,
+                }
+
+            })
+            message.channel.send(`you lost ${amound} bagels. Sucks to suck`)
+        } else {
+            const win = amound * 2;
+            await profileModel.findOneAndUpdate({
+                userID: message.author.id
+
+            }, {
+                $inc: {
+                    coins: win,
+                }
+
+            })
+            message.channel.send(`you won ${win} bagels.`)
+        }
+    }
+    if (command == 'jobs') {
+        if (profileData.job == null) {
+            message.channel.send('Dev 2000, Toast 1500, Moderator 3000, Gamer 1000, Twitch Thot 5000');
+        } else {
+            return message.channel.send('You already have a job')
+        }
+    }
+    if (command == 'job') {
+        const job = args[0]
+        if (job == null) message.channel.send('no job specified');
+        if (job == 'dev') {
+            await profileModel.findOneAndUpdate({
+                userID: message.author.id
+
+            }, {
+               
+                 job: 'dev',
+                 jobpay: 2000
+                
+
+            })
+        }
+        if (job == 'toast') {
+            await profileModel.findOneAndUpdate({
+                userID: message.author.id
+
+            }, 
+                {
+                    job: 'Toast',
+                    jobpay: 1500
+                
+
+            })
+        }
+        if (job == 'moderator') {
+            await profileModel.findOneAndUpdate({
+                userID: message.author.id
+
+            }, {
+                
+                    job: 'Moderator',
+                    jobpay: 3000
+                
+
+                })
+        }
+        if (job == 'gamer') {
+            await profileModel.findOneAndUpdate({
+                userID: message.author.id
+
+            }, {
+                 job: 'Gamer',
+                 jobpay: 1000
+                   
+                
+
+            })
+        }
+        if (job == 'twitch') {
+            await profileModel.findOneAndUpdate({
+                userID: message.author.id
+
+            }, {
+                job: 'Twitch Thot',
+                jobpay: 5000
+
+            })
+            
+        }
+        message.channel.send(`Your new job is a ${profileData.job}, and you make ₿${profileData.jobpay}`);
+    }
+    if (command == 'init') {
+        const eee = message.mentions.members.first();
+        let profile = await profileModel.create({
+            userID: message.author.id,
+            serverID: message.guild.id,
+            coins: 0,
+            bank: 0,
+            job: null,
+        })
+        profile.save();
+    }
+    if (command == 'bal') {
+        
+        
+        if (args[0] == null) {
+            return message.channel.send(`your wallet bal is ₿${profileData.coins}, your bank bal is ₿${profileData.bank}`)
+        } else {
+            
+            userID = message.mentions.members.first.id
+            return message.channel.send(`your wallet bal ₿${profileData.coins}, your bank bal is ₿${profileData.bank}`)
+        }
+        
 
 
+    }
+    if (command == 'imstilljustgonnausemrfrog') {
+        message.reply('fuck you');
+    }
+    if (command == 'beg') {
+        if (cool.has(message.author.id)) {
+            message.reply('You have to wait 5m')
+        } else {
+
+        const poor = Math.floor(Math.random() * 10) + 1;
+        const response = await profileModel.findOneAndUpdate(
+            {
+                userID: message.author.id,
+            },
+            {
+                $inc: {
+                    coins: poor,
+                },
+            }
+        );
+        return message.channel.send(`${message.author.username}, you begged and received ${poor} **bagels**`);
+
+        cool.add(message.author.id)
+        setTimeout(() => {
+            cool.delete(message.author.id)
+        }, 300000)
+        }
+    }
+    if (command == 'dep') {
+        const amount = args[0]
+        if (amount % 1 != 0 || amount <= 0) {
+            return message.channel.send('no');
+        }
+        try {
+            if (amount > profileData.coins) return message.channel.send(`you're trying to scew the bank`)
+            await profileModel.findOneAndUpdate({
+                userID: message.author.id,
 
 
+            }, {
+                $inc: {
+                    coins: -amount,
+                    bank: amount,
+                }
+
+            })
+            return message.channel.send(`You deposited ₿${amount}`
+        )} catch (err) {
+            console.log(err);
+        }
+    }
+    if (command == 'with') {
+        const amount = args[0]
+        if (amount % 1 != 0 || amount <= 0) {
+            return message.channel.send('no');
+        }
+        try {
+            if (amount > profileData.bank) return message.channel.send(`you're trying to scew the bank`)
+            await profileModel.findOneAndUpdate({
+                userID: message.author.id,
 
 
+            }, {
+                $inc: {
+                    coins: amount,
+                    bank: -amount,
+                }
 
+            })
+            return message.channel.send(`You withdrew ₿${amount}`
+            )
+        } catch (err) {
+            console.log(err);
+        }
+    }
 	if (command == 'del') {
 		
 		let fuck = args[0]
@@ -97,7 +323,7 @@ client.on('message', async message => {
 
 
 
-
+    
 
 
 
@@ -769,5 +995,12 @@ client.on('message', async message => {
 }
 
 );
-
+//mongoose.connect(process.env.SRV, {
+ //   useNewUrlParser: true,
+ //   useUnifiedTopology: true
+//}).then(() => {
+   // console.log('sucsesfull connection');
+//});
+mongoose.connect('mongodb+srv://toast:Maddox64@toastbot.ewug8.mongodb.net/tostbot', { useNewUrlParser: true, useUnifiedTopology: true });
+console.log('Database Online');
 client.login(process.env.TOKEN);
