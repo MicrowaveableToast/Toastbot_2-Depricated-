@@ -1,4 +1,3 @@
-﻿
 ﻿require('dotenv').config();
 const HMfull = require("hmfull");
 const { Client, Message } = require('discord.js');
@@ -8,6 +7,10 @@ const prefix = "t/";
 const NSFW = require("discord-nsfw");
 const nsfw = new NSFW();
 const mongoose = require('mongoose')
+const settings = {
+    prefix: "t/",
+    
+};
 const profileModel = require('./models/proflieSchema.js')
 const hmtai = require("hmtai");
 const nHentai = require("@v0idpointer/nhentai.js");
@@ -32,7 +35,7 @@ client.on('message', async message => {
     if (message.author.bot) return;
     
     
-    if (command == 't/give') {
+    if (command == 'give') {
         if (message.author.id == 693702960189800498) {
             const amount = args[1]
             const target = message.mentions.members.first();
@@ -56,7 +59,7 @@ client.on('message', async message => {
         }
     }
 
-    if (command == 't/gamble') {
+    if (command == 'gamble') {
         const amound = args[0]
         const number = Math.floor(Math.random() * 100) + 1;
         if (amound % 1 != 0 || amound <= 0) {
@@ -88,14 +91,14 @@ client.on('message', async message => {
             message.channel.send(`you won ${win} bagels.`)
         }
     }
-    if (command == 't/jobs') {
+    if (command == 'jobs') {
         if (profileData.job == null) {
             message.channel.send('Dev 2000, Toast 1500, Moderator 3000, Gamer 1000, Twitch Thot 5000');
         } else {
             return message.channel.send('You already have a job')
         }
     }
-    if (command == 't/job') {
+    if (command == 'job') {
         const job = args[0]
         if (job == null) message.channel.send('no job specified');
         if (job == 'dev') {
@@ -159,7 +162,7 @@ client.on('message', async message => {
         }
         message.channel.send(`Your new job is a ${profileData.job}, and you make ₿${profileData.jobpay}`);
     }
-    if (command == 't/init') {
+    if (command == 'init') {
         const eee = message.mentions.members.first();
         let profile = await profileModel.create({
             userID: message.author.id,
@@ -170,7 +173,7 @@ client.on('message', async message => {
         })
         profile.save();
     }
-    if (command == 't/bal') {
+    if (command == 'bal') {
         
         
         if (args[0] == null) {
@@ -184,10 +187,10 @@ client.on('message', async message => {
 
 
     }
-    if (command == 't/imstilljustgonnausemrfrog') {
+    if (command == 'imstilljustgonnausemrfrog') {
         message.reply('fuck you');
     }
-    if (command == 't/beg') {
+    if (command == 'beg') {
         if (cool.has(message.author.id)) {
             message.reply('You have to wait 5m')
         } else {
@@ -211,7 +214,7 @@ client.on('message', async message => {
         }, 300000)
         }
     }
-    if (command == 't/dep') {
+    if (command == 'dep') {
         const amount = args[0]
         if (amount % 1 != 0 || amount <= 0) {
             return message.channel.send('no');
@@ -234,7 +237,7 @@ client.on('message', async message => {
             console.log(err);
         }
     }
-    if (command == 't/with') {
+    if (command == 'with') {
         const amount = args[0]
         if (amount % 1 != 0 || amount <= 0) {
             return message.channel.send('no');
@@ -258,7 +261,7 @@ client.on('message', async message => {
             console.log(err);
         }
     }
-	if (command == 't/del') {
+	if (command == 'del') {
 		
 		let fuck = args[0]
 		message.channel.bulkDelete(fuck)
@@ -274,7 +277,7 @@ client.on('message', async message => {
 		
 		
 	}
-   if (command == 't/nicoroles'){
+   if (command == 'nicoroles'){
 	 let perms = message.member.permissions;
 	 
 	 
@@ -339,7 +342,7 @@ client.on('message', async message => {
 
 
 
-    if (command == 't/executeorder66') {
+    if (command == 'executeorder66') {
         var numb = Math.floor(Math.random() * 999999999999) + 1
         message.channel.send(numb + " users banned");
         
@@ -347,13 +350,13 @@ client.on('message', async message => {
         
     }
 
-    if (command == 't/test') {
+    if (command == 'test') {
         message.delete();
         message.reply('test');
     }
 
 
-    if (command === 't/bonk') {
+    if (command === 'bonk') {
         if (!message.member.permissions.has("MOVE_MEMBERS")) return message.channel.send(':x: **You do not have the permission to use this command!**');
         const horny = 737890062347272206
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -387,23 +390,23 @@ client.on('message', async message => {
     }
     }
 
-    if (command == 't/sfwneko') {
+    if (command == 'sfwneko') {
         message.delete();
         let res = HMfull.HMtai.sfw.neko()
         message.channel.send(res.url);
 
     }
-    if (command == 't/computerwallpaper') {
+    if (command == 'computerwallpaper') {
         message.delete();
         let res = HMfull.HMtai.sfw.wallpaper();
         message.channel.send(res.url);
     }
-    if (command == 't/mobilewallpaper') {
+    if (command == 'mobilewallpaper') {
         let res = HMfull.HMtai.sfw.mobileWallpaper();
         message.channel.send(res.url);
     }
 
-    if (command == 't/ass') {
+    if (command == 'ass') {
         message.delete();
         if (message.channel.nsfw) {
             let numb = Math.floor(Math.random() * 2) + 1
@@ -421,7 +424,7 @@ client.on('message', async message => {
         }
 
     }
-    if (command == 't/bdsm') {
+    if (command == 'bdsm') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.bdsm());
@@ -430,7 +433,7 @@ client.on('message', async message => {
 
     }
   
-    if (command == 't/manga') {
+    if (command == 'manga') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.manga());
@@ -438,7 +441,7 @@ client.on('message', async message => {
         }
         
     }
-    if (command == 't/help') {
+    if (command == 'help') {
         if (message.channel.nsfw) {
             let res = HMfull.HMtai.sfw.neko()
             return message.channel.send("4k, irlass, irlpussy, irlboobs, irlthighs, irllewd, irlgif,  sfwneko, mid,  computerwallpaper, ass, bdsm, manga, orgy, pantsu, glasses, cuckold, thighs, uniform, gangband, tentacles, gif, ZettaiRyouiki, nsfwMobileWallpaper, boobs, irlanal, trap ( ͡° ͜ʖ ͡°), tits, nekotits, nekofeet, neko pussy keta, nsfwavatar, wallpaper, hentai, nsfwneko, yuri, femdom, (kinky one arent ya), feet (hereatic), pussy, ero, blowjob, masturbation, cum, ahegao");
@@ -449,7 +452,7 @@ client.on('message', async message => {
     
     
     
-    if (command == 't/orgy') {
+    if (command == 'orgy') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.orgy());
@@ -458,7 +461,7 @@ client.on('message', async message => {
 
     }
     
-    if (command == 't/pantsu') {
+    if (command == 'pantsu') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.pantsu());
@@ -466,7 +469,7 @@ client.on('message', async message => {
         }
 
     }
-    if (command == 't/glasses') {
+    if (command == 'glasses') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.glasses());
@@ -474,7 +477,7 @@ client.on('message', async message => {
         }
 
     }
-    if (command == 't/cuckold') {
+    if (command == 'cuckold') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.cuckold());
@@ -484,7 +487,7 @@ client.on('message', async message => {
     }
    
    
-    if (command == 't/thighs') {
+    if (command == 'thighs') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -503,7 +506,7 @@ client.on('message', async message => {
     }
    
     
-    if (command == 't/uniform') {
+    if (command == 'uniform') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.uniform());
@@ -511,7 +514,7 @@ client.on('message', async message => {
         }
 
     }
-    if (command == 't/gangbang') {
+    if (command == 'gangbang') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.gangbang());
@@ -519,7 +522,7 @@ client.on('message', async message => {
         }
 
     }
-    if (command == 't/tentacles') {
+    if (command == 'tentacles') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.tentacles());
@@ -527,7 +530,7 @@ client.on('message', async message => {
         }
 
     }
-    if (command == 't/gif') {
+    if (command == 'gif') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.gif());
@@ -539,7 +542,7 @@ client.on('message', async message => {
     }
    
 
-    if (command == 't/zettaiRyouiki') {
+    if (command == 'zettaiRyouiki') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.zettaiRyouiki());
@@ -547,7 +550,7 @@ client.on('message', async message => {
         }
 
     }
-    if (command == 't/nsfwmobilewallpaper') {
+    if (command == 'nsfwmobilewallpaper') {
         if (message.channel.nsfw) {
             message.delete();
             embed.setImage(hmtai.nsfw.nsfwMobileWallpaper());
@@ -556,21 +559,21 @@ client.on('message', async message => {
     }
 
      
-    if (command == 't/irlgif') {
+    if (command == 'irlgif') {
         const image = await nsfw.pgif();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
         message.channel.send(embed);
     }
 
-    if (command == 't/irlpussy') {
+    if (command == 'irlpussy') {
         const image = await nsfw.pussy();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
         message.channel.send(embed);
         
     }
-    if (command == "t/irlthigh")   {
+    if (command == "irlthigh")   {
         const image = await nsfw.thigh();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
@@ -578,14 +581,14 @@ client.on('message', async message => {
 
 
     }
-    if (command == "t/irlboobs") {
+    if (command == "irlboobs") {
         const image = await nsfw.boobs();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
         message.channel.send(embed);
 
     }
-    if (command == 't/irllewd') {
+    if (command == 'irllewd') {
         const image = await nsfw.lewd();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
@@ -593,7 +596,7 @@ client.on('message', async message => {
     }
     
     
-    if (command == 't/kuni') {
+    if (command == 'kuni') {
         if (message.channel.nsfw) {
             async function Nekos() {
                 message.delete();
@@ -605,7 +608,7 @@ client.on('message', async message => {
 
      }
 
-    if (command == 't/irlass') {
+    if (command == 'irlass') {
 
         const image = await nsfw.ass();
         const embed = new Discord.MessageEmbed()
@@ -613,7 +616,7 @@ client.on('message', async message => {
         message.channel.send(embed);
     }
 
-    if (command == 't/boobs') {
+    if (command == 'boobs') {
         if (message.channel.nsfw) {
             async function Nekos() {
                 message.delete();
@@ -624,13 +627,13 @@ client.on('message', async message => {
         }
 
      }
-     if (command == "t/irlgonewild") {
+     if (command == "irlgonewild") {
         const image = await nsfw.gonewild();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
         message.channel.send(embed);
      }
-    if (command == 't/trap') {
+    if (command == 'trap') {
         if (message.channel.nsfw) {
             async function Nekos() {
                 message.delete();
@@ -645,7 +648,7 @@ client.on('message', async message => {
     
 
     
-       if (command == 't/tits') {
+       if (command == 'tits') {
         if (message.channel.nsfw) {
             async function Nekos() {
                 message.delete();
@@ -660,7 +663,7 @@ client.on('message', async message => {
     
 
     
-       if (command == 't/keta') {
+       if (command == 'keta') {
         if (message.channel.nsfw) {
             async function Nekos() {
                 message.delete();
@@ -676,7 +679,7 @@ client.on('message', async message => {
 
 
     
-       if (command == 't/nsfwavatar') {
+       if (command == 'nsfwavatar') {
         if (message.channel.nsfw) {
             async function Nekos() {
                 message.delete();
@@ -688,7 +691,7 @@ client.on('message', async message => {
 
      }
 
-    if (command == 't/4k') {
+    if (command == '4k') {
         const image = await nsfw.fourk();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
@@ -696,7 +699,7 @@ client.on('message', async message => {
 
 
     }
-    if (command == 't/nekofeet') {
+    if (command == 'nekofeet') {
         const image = await nsfw.nekofeet();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
@@ -704,14 +707,14 @@ client.on('message', async message => {
 
 
     }
-    if (command == "t/mid") {
+    if (command == "mid") {
         const image = await nsfw.hmidriff();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
         message.channel.send(embed)
 
     }
-    if (command == 't/nekopussy'){
+    if (command == 'nekopussy'){
         const image = await nsfw.nekopussy();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
@@ -720,7 +723,7 @@ client.on('message', async message => {
 
 
     }
-    if (command == 't/nekotits') {
+    if (command == 'nekotits') {
         const image = await nsfw.nekotits();
         const embed = new Discord.MessageEmbed()
         .setImage(image);
@@ -728,7 +731,7 @@ client.on('message', async message => {
 
 
     }
-    if (command == 't/wallpaper') {
+    if (command == 'wallpaper') {
         if (message.channel.nsfw) {
             async function Nekos() {
                 message.delete();
@@ -739,7 +742,7 @@ client.on('message', async message => {
         }
 
      }
-     if (command == 't/irlanal') {
+     if (command == 'irlanal') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -760,7 +763,7 @@ client.on('message', async message => {
         }
 
      }
-    if (command == 't/hentai') {
+    if (command == 'hentai') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 5) + 1
@@ -786,7 +789,7 @@ client.on('message', async message => {
 
         }
     }
-    if (command == 't/nsfwneko') {
+    if (command == 'nsfwneko') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -805,7 +808,7 @@ client.on('message', async message => {
 
         }
     }
-    if (command == 't/yuri') {
+    if (command == 'yuri') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -824,7 +827,7 @@ client.on('message', async message => {
 
         }
     }
-    if (command == 't/femdom') {
+    if (command == 'femdom') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -843,7 +846,7 @@ client.on('message', async message => {
 
         }
     }
-    if (command == 't/feet') {
+    if (command == 'feet') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -862,7 +865,7 @@ client.on('message', async message => {
 
         }
     }
-    if (command == 't/pussy') {
+    if (command == 'pussy') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -881,7 +884,7 @@ client.on('message', async message => {
 
         }
     }
-    if (command == 't/ero') {
+    if (command == 'ero') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -900,7 +903,7 @@ client.on('message', async message => {
 
         }
     }
-    if (command == 't/blowjob') {
+    if (command == 'blowjob') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -919,7 +922,7 @@ client.on('message', async message => {
 
         }
     }
-    if (command == 't/masturbation') {
+    if (command == 'masturbation') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -938,7 +941,7 @@ client.on('message', async message => {
 
         }
     }
-    if (command == 't/cum') {
+    if (command == 'cum') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
@@ -957,7 +960,7 @@ client.on('message', async message => {
 
         }
     }
-    if (command == 't/ahegao') {
+    if (command == 'ahegao') {
         if (message.channel.nsfw) {
             message.delete();
             let numb = Math.floor(Math.random() * 2) + 1
