@@ -33,7 +33,7 @@ client.on('message', async message => {
     const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     if (message.author.bot) return;
-    
+    if (!message.content.startsWith(prefix)) return;
     
     if (command == 'give') {
         if (message.author.id == 693702960189800498) {
