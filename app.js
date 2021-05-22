@@ -9,7 +9,7 @@ const NSFW = require("discord-nsfw");
 const nsfw = new NSFW();
 const mongoose = require('mongoose')
 const settings = {
-    prefix: "t/",
+    prefix: " t/",
     
 };
 const profileModel = require('./models/proflieSchema.js')
