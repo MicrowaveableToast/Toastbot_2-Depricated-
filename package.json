@@ -73,7 +73,7 @@
     "is-typedarray": "^1.0.0",
     "is-yarn-global": "^0.3.0",
     "json-buffer": "^3.0.1",
-    "kasu.nhentaiapi.js": "^2.7.2",
+    "kasu.nhentaiapi.js": "^2.7.6",
     "keyv": "^3.1.0",
     "latest-version": "^5.1.0",
     "lowercase-keys": "^1.0.1",

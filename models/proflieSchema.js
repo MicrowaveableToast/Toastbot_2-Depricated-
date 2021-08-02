@@ -7,7 +7,9 @@ const profileSchema = new mongoose.Schema({
     bank: { type: Number },
     items: { type: Array },
     job: { type: String },
-    jobpay: { type: Number}
+    jobpay: { type: Number},
+    page: { type: Number, default: -1},
+    book: { type: Number, default: 0},
 });
 
 const model = mongoose.model("ProfileModels", profileSchema);

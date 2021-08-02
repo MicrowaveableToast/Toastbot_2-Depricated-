@@ -1,4 +1,5 @@
 ﻿require('dotenv').config();
+
 const HMfull = require("hmfull");
 const { Client, Message } = require('discord.js');
 const Discord = require('discord.js');
@@ -7,16 +8,17 @@ const prefix = "t/";
 const NSFW = require("discord-nsfw");
 const nsfw = new NSFW();
 const mongoose = require('mongoose')
+var kasuNhentaiapiJs = require("kasu.nhentaiapi.js")
+const API = require('kasu.nhentaiapi.js');
+const api = new API();
 const settings = {
     prefix: "t/",
     
 };
 const profileModel = require('./models/proflieSchema.js')
 const hmtai = require("hmtai");
-const nHentai = require("@v0idpointer/nhentai.js");
 const cool = new Set();
-const { API, } = require('nhentai-api');
-const api = new API();
+
 client.on('ready', async () => {
     
     console.log('TOASTBOT READY');
@@ -58,7 +60,62 @@ client.on('message', async message => {
             message.channel.send(`your are not Toast#0215`)
         }
     }
+    if (command == 'setbook') {
+        id = args[0]
+        const response = await profileModel.findOneAndUpdate(
+            {
+                userID: message.author.id,
+            },
+            {
+                $set: {
+                    book: id,
+                    page: -1,
+                },
+            }
+        );
 
+    }
+    if (command == 'randbook') {
+        const number = Math.floor(Math.random() * 367870) + 1;
+        id = number
+        const response = await profileModel.findOneAndUpdate(
+            {
+                userID: message.author.id,
+            },
+            {
+                $set: {
+                    book: id,
+                    page: -1,
+                },
+            }
+        );
+    }
+    if (command == 'nextpage') {
+        if (message.channel.nsfw) {
+            const idd = profileData.book
+            ID = idd
+            
+            const response = await profileModel.findOneAndUpdate(
+                {
+                    userID: message.author.id,
+                },
+                {
+                    $inc: {
+                        page: 1,
+                    },
+                }
+            );
+            api.getID(ID).list(data=>{
+                message.channel.send ( data.page_pics[profileData.page] )
+                
+                
+                
+            })  
+        }
+
+    
+    
+    }
     if (command == 'gamble') {
         const amound = args[0]
         const number = Math.floor(Math.random() * 100) + 1;
@@ -163,13 +220,15 @@ client.on('message', async message => {
         message.channel.send(`Your new job is a ${profileData.job}, and you make ₿${profileData.jobpay}`);
     }
     if (command == 'init') {
-        const eee = message.mentions.members.first();
+        
         let profile = await profileModel.create({
             userID: message.author.id,
             serverID: message.guild.id,
             coins: 0,
             bank: 0,
             job: null,
+            page: 0,
+            book: 0,
         })
         profile.save();
     }
@@ -444,7 +503,7 @@ client.on('message', async message => {
     if (command == 'help') {
         if (message.channel.nsfw) {
             let res = HMfull.HMtai.sfw.neko()
-            return message.channel.send("4k, irlass, irlpussy, irlboobs, irlthighs, irllewd, irlgif,  sfwneko, mid,  computerwallpaper, ass, bdsm, manga, orgy, pantsu, glasses, cuckold, thighs, uniform, gangband, tentacles, gif, ZettaiRyouiki, nsfwMobileWallpaper, boobs, irlanal, trap ( ͡° ͜ʖ ͡°), tits, nekotits, nekofeet, neko pussy keta, nsfwavatar, wallpaper, hentai, nsfwneko, yuri, femdom, (kinky one arent ya), feet (hereatic), pussy, ero, blowjob, masturbation, cum, ahegao");
+            return message.channel.send("setbook (use numbers), randbook, nextpage, 4k, irlass, irlpussy, irlboobs, irlthighs, irllewd, irlgif,  sfwneko, mid,  computerwallpaper, ass, bdsm, manga, orgy, pantsu, glasses, cuckold, thighs, uniform, gangband, tentacles, gif, ZettaiRyouiki, nsfwMobileWallpaper, boobs, irlanal, trap ( ͡° ͜ʖ ͡°), tits, nekotits, nekofeet, neko pussy keta, nsfwavatar, wallpaper, hentai, nsfwneko, yuri, femdom, (kinky one arent ya), feet (hereatic), pussy, ero, blowjob, masturbation, cum, ahegao");
             message.channel.send(res.url);
         }
 
@@ -1003,3 +1062,4 @@ client.on('message', async message => {
 mongoose.connect('mongodb+srv://toast:Maddox64@toastbot.ewug8.mongodb.net/tostbot', { useNewUrlParser: true, useUnifiedTopology: true });
 console.log('Database Online');
 client.login(process.env.TOKEN);
+
