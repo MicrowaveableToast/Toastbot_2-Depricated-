@@ -503,12 +503,14 @@ client.on('message', async message => {
     if (command == 'help') {
         if (message.channel.nsfw) {
             let res = HMfull.HMtai.sfw.neko()
-            return message.channel.send("setbook (use numbers), randbook, nextpage, 4k, irlass, irlpussy, irlboobs, irlthighs, irllewd, irlgif,  sfwneko, mid,  computerwallpaper, ass, bdsm, manga, orgy, pantsu, glasses, cuckold, thighs, uniform, gangband, tentacles, gif, ZettaiRyouiki, nsfwMobileWallpaper, boobs, irlanal, trap ( ͡° ͜ʖ ͡°), tits, nekotits, nekofeet, neko pussy keta, nsfwavatar, wallpaper, hentai, nsfwneko, yuri, femdom, (kinky one arent ya), feet (hereatic), pussy, ero, blowjob, masturbation, cum, ahegao");
+            return message.channel.send("setbook (use numbers), randbook, currentbook, nextpage, 4k, irlass, irlpussy, irlboobs, irlthighs, irllewd, irlgif,  sfwneko, mid,  computerwallpaper, ass, bdsm, manga, orgy, pantsu, glasses, cuckold, thighs, uniform, gangband, tentacles, gif, ZettaiRyouiki, nsfwMobileWallpaper, boobs, irlanal, trap ( ͡° ͜ʖ ͡°), tits, nekotits, nekofeet, neko pussy keta, nsfwavatar, wallpaper, hentai, nsfwneko, yuri, femdom, (kinky one arent ya), feet (hereatic), pussy, ero, blowjob, masturbation, cum, ahegao");
             message.channel.send(res.url);
         }
 
     }
-    
+    if (command == currentbook) {
+        message.channel.send(profileData.book)
+    }
     
     
     if (command == 'orgy') {
