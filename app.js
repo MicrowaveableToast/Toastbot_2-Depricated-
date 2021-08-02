@@ -508,7 +508,7 @@ client.on('message', async message => {
         }
 
     }
-    if (command == currentbook) {
+    if (command == 'currentbook') {
         message.channel.send(profileData.book)
     }
     
