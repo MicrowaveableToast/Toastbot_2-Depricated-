@@ -1,5 +1,4 @@
 ﻿require('dotenv').config();
-
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
 const HMfull = require("hmfull");
@@ -22,11 +21,15 @@ const settings = {
     
 };
 const spdl = require('spdl-core');
-
-/////////////////
+client.commands = new Discord.Collection();
+client.events = new Discord.Collection();
 const profileModel = require('./models/proflieSchema.js')
 const hmtai = require("hmtai");
 const cool = new Set();
+['command_handler', 'events_handler'].forEach(handler => {
+    require(`./handlers/${handler}`)(client, Discord)
+
+});
 client.on('ready', async () => {
     
     console.log('TOASTBOT READY');
@@ -34,7 +37,8 @@ client.on('ready', async () => {
 });
 
 client.on('message', async message => {
-
+    
+    
     const queue = new Map();
     const embed = new Discord.MessageEmbed();
     let profileData;
@@ -48,20 +52,16 @@ client.on('message', async message => {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
 
-
+    /*
     if (command == 'p') {
         const video_player = async (guild, song) => {
             const song_queue = queue.get(guild.id);
 
             //If no song is left in the server queue. Leave the voice channel and delete the key and value pair from the global queue.
             if (!song) {
-                setTimeout(function(){
-                            
-                        song_queue.voice_channel.leave();
-                        queue.delete(guild.id);
+                song_queue.voice_channel.leave();
+                queue.delete(guild.id);
                 return;
-                ,30000);
-                
             }
             const stream = ytdl(song.url, { filter: 'audioonly' });
             song_queue.connection.play(stream, { seek: 0, volume: 0.5 })
@@ -124,7 +124,7 @@ client.on('message', async message => {
         }
         
     }
-
+*/
     if (command == 'skip') {
         const video_player = async (guild, song) => {
             const song_queue = queue.get(guild.id);
@@ -1199,4 +1199,3 @@ client.on('message', async message => {
     mongoose.connect('mongodb+srv://toast:Maddox64@toastbot.ewug8.mongodb.net/tostbot', { useNewUrlParser: true, useUnifiedTopology: true });
     console.log('Database Online');
     client.login(process.env.TOKEN); 
-    

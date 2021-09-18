@@ -1,11 +1,13 @@
-const { MessageEmbed, Client } = require('discord.js');
+const Discord = require('discord.js');
 const spdl = require('spdl-core');
 function formatDuration(duration) {
     let seconds = duration / 1000;
     return `${Math.floor(seconds / 60)}m ${Math.floor(seconds % 60)}s`;
 }
-const 
-const   client = new Client();
+const { MessageEmbed } = require('discord.js');
+
+const { Client, Message } = require('discord.js');
+const client = new Client();
 client.login('NzkzOTczMTc2NjE0NjQ5OTQ2.X-0DJA.sLs6ucSln9FFee6UC5HYVE3mrM0');
 client.on('ready', () => console.log('Ready'));
 
