@@ -989,8 +989,8 @@ client.on('message', async message => {
                 message.delete();
                 let numb = Math.floor(Math.random() * 2) + 1
                 
-                 embed.setImage(HMfull.HMtai.nsfw.neko());
-                    return message.channel.send(embed);
+                 let res = HMfull.HMtai.nsfw.neko()
+                message.channel.send(res.url);
                 
                 
 
