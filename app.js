@@ -55,9 +55,13 @@ client.on('message', async message => {
 
             //If no song is left in the server queue. Leave the voice channel and delete the key and value pair from the global queue.
             if (!song) {
-                song_queue.voice_channel.leave();
-                queue.delete(guild.id);
+                setTimeout(function(){
+                            
+                        song_queue.voice_channel.leave();
+                        queue.delete(guild.id);
                 return;
+                ,30000);
+                
             }
             const stream = ytdl(song.url, { filter: 'audioonly' });
             song_queue.connection.play(stream, { seek: 0, volume: 0.5 })
