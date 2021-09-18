@@ -988,18 +988,11 @@ client.on('message', async message => {
             if (message.channel.nsfw) {
                 message.delete();
                 let numb = Math.floor(Math.random() * 2) + 1
-                if (numb == 1) {
-                    embed.setImage(HMfull.HMtai.nsfw.neko());
+                
+                 embed.setImage(HMfull.HMtai.nsfw.neko());
                     return message.channel.send(embed);
-                }
-                if (numb == 2) {
-                    async function Nekos() {
-                        let res = await HMfull.Nekos.nsfw.nsfwNeko()
-                        message.channel.send(res.url);
-                    }
-                    Nekos();
-
-                }
+                
+                
 
             }
         }
