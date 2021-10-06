@@ -30,6 +30,7 @@ const cool = new Set();
     require(`./handlers/${handler}`)(client, Discord)
 
 });
+var music_only = new Boolean(null);
 client.on('ready', async () => {
     
     console.log('TOASTBOT READY');
@@ -38,7 +39,8 @@ client.on('ready', async () => {
 
 client.on('message', async message => {
     
-    
+    if (message.guildid == !563894367555813401) musiconly = true;
+    if (musiconly == true) return;
     const queue = new Map();
     const embed = new Discord.MessageEmbed();
     let profileData;
@@ -125,6 +127,8 @@ client.on('message', async message => {
         
     }
 */
+    
+       
     if (command == 'skip') {
         const video_player = async (guild, song) => {
             const song_queue = queue.get(guild.id);
