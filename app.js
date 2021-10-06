@@ -30,7 +30,7 @@ const cool = new Set();
     require(`./handlers/${handler}`)(client, Discord)
 
 });
-var music_only = new Boolean(null);
+var musiconly = new Boolean(null);
 client.on('ready', async () => {
     
     console.log('TOASTBOT READY');
