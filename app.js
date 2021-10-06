@@ -39,7 +39,7 @@ client.on('ready', async () => {
 
 client.on('message', async message => {
     
-    if (message.guildid == !563894367555813401) musiconly = true;
+    if (message.guildid == !563894367555813401) return;
     if (musiconly == true) return;
     const queue = new Map();
     const embed = new Discord.MessageEmbed();
