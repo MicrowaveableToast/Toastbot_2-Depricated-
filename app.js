@@ -132,7 +132,7 @@ client.on('message', async message => {
     if (command == 'yaoi') {
       let aA = message.author
      let aB = message.mentions.users.first()
-     const aC = new Discord.RichEmbed()
+     const aC = new Discord.MessageEmbed()
     .setImage(star.yaoi())
     .setFooter('Gifs by S.T.A.R Labs')
     .setTimestamp();
