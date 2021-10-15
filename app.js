@@ -134,8 +134,6 @@ client.on('message', async message => {
      let aB = message.mentions.users.first()
      const aC = new Discord.MessageEmbed()
     .setImage(star.yaoi())
-    .setFooter('Gifs by S.T.A.R Labs')
-    .setTimestamp();
      message.channel.send(aC)
      }
     if (command == 'skip') {
