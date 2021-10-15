@@ -6,6 +6,7 @@ const { Client, Message } = require('discord.js');
 const Discord = require('discord.js');
 const client = new Client();
 const prefix = "t/";
+const star = require('star-labs');
 const NSFW = require("discord-nsfw");
 const nsfw = new NSFW();
 const mongoose = require('mongoose')
@@ -128,7 +129,14 @@ client.on('message', async message => {
     }
 */
     
-       
+    if (command == 'yaoi') {
+      let aA = message.author
+     let aB = message.mentions.users.first()
+     const aC = new Discord.RichEmbed()
+    .setImage(star.yaoi())
+    .setFooter('Gifs by S.T.A.R Labs')
+    .setTimestamp();
+     message.channel.send(aC)
     if (command == 'skip') {
         const video_player = async (guild, song) => {
             const song_queue = queue.get(guild.id);
