@@ -137,6 +137,7 @@ client.on('message', async message => {
     .setFooter('Gifs by S.T.A.R Labs')
     .setTimestamp();
      message.channel.send(aC)
+     }
     if (command == 'skip') {
         const video_player = async (guild, song) => {
             const song_queue = queue.get(guild.id);
