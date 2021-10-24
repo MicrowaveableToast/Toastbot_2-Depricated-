@@ -11,7 +11,7 @@ module.exports = {
     description: 'Advanced music bot',
     async execute(message, args, cmd, client, Discord) {
 
-
+        
         //Checking for the voicechannel and permissions (you can add more permissions if you like).
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send('You need to be in a channel to execute this command!');
@@ -26,7 +26,11 @@ module.exports = {
         if (cmd === 'play' || cmd === 'p' || cmd === 'pl') {
             if (!args.length) return message.channel.send('You need to send the second argument!');
             let song = {};
-
+            if (!voice_channel) {
+                song_queue.voice_channel.leave();
+                queue.delete(guild.id);
+                return;
+            }
             //If the first argument is a link. Set the song object to have two keys. Title and URl.
             if (ytdl.validateURL(args[0])) {
                 const song_info = await ytdl.getInfo(args[0]);
