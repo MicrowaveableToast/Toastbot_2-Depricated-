@@ -129,7 +129,7 @@ client.on('message', async message => {
     }
 */
     if (command =='Restart') {
-        let E = '693702960189800498'\
+        let E = '693702960189800498';
         message.channel.send("restarting bot")
         E.send('Someone broke me :(')
 
