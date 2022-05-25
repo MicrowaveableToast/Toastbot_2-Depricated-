@@ -40,7 +40,7 @@ client.on('ready', async () => {
 
 client.on('message', async message => {
     
-    if (message.guildid === !563894367555813401) return;
+    
     if (musiconly == true) return;
     const queue = new Map();
     const embed = new Discord.MessageEmbed();
@@ -129,7 +129,7 @@ client.on('message', async message => {
     }
 */
     if (command =='Restart') {
-        let E = '693702960189800498';
+        const E = 693702960189800498
         message.channel.send("restarting bot")
         E.send('Someone broke me :(')
 
